@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="matcha-forest" class="theme-matcha-forest">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#06130d">
+    <title>AETHERIS ACADEMIA | المنظومة الأكاديمية المريحة للعين - ماتشا ونعناع 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Typography for Maximum Reading Comfort -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&family=JetBrains+Mono:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        if (window.tailwind) {
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            cairo: ['Cairo', 'sans-serif'],
+                            tajawal: ['Tajawal', 'sans-serif'],
+                            tech: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            forest: {
+                                950: '#040d09',
+                                900: '#07160f',
+                                850: '#0c2219',
+                                800: '#122f23',
+                                700: '#1b3f30',
+                                600: '#265340',
+                            },
+                            mint: {
+                                300: '#86efac',
+                                400: '#6ee7b7',
+                                500: '#34d399',
+                                600: '#10b981',
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            box-sizing: border-box;
+        }
+
+        /* PALETTES: Strict Eye-Comfort Botanical Greens & Pure Mint - NO PINK - NO ROSES - NO HARSH RED */
+        :root {
+            --bg-base: #06130d;
+            --bg-card: rgba(12, 31, 22, 0.92);
+            --border-soft: rgba(110, 231, 183, 0.18);
+            --accent-primary: #6ee7b7;   /* Refreshing Pure Mint */
+            --accent-secondary: #86efac; /* Botanical Matcha Cream */
+            --accent-tertiary: #fde68a;  /* Warm Chamomile Gold */
+            --accent-glow: rgba(110, 231, 183, 0.22);
+            --text-title: #f0fdf4;
+            --text-sub: #dcfce7;
+            --text-dim: #82a893;
+            --badge-tint: rgba(110, 231, 183, 0.12);
+            --glass-shadow: 0 16px 36px -10px rgba(2, 10, 6, 0.90);
+        }
+
+        /* Theme 1: Deep Matcha Forest (ماتشا الغابة العميقة المريحة) */
+        html[data-theme="matcha-forest"] {
+            --bg-base: #06130d;
+            --bg-card: rgba(12, 31, 22, 0.92);
+            --border-soft: rgba(110, 231, 183, 0.20);
+            --accent-primary: #6ee7b7;
+            --accent-secondary: #a7f3d0;
+            --accent-tertiary: #fde68a;
+            --accent-glow: rgba(110, 231, 183, 0.24);
+            --text-title: #f0fdf4;
+            --text-sub: #dcfce7;
+            --text-dim: #82a893;
+        }
+
+        /* Theme 2: Sage Leaf & Olive (شاي الميرمية والزيتون الهادئ) */
+        html[data-theme="sage-olive"] {
+            --bg-base: #091510;
+            --bg-card: rgba(17, 33, 26, 0.94);
+            --border-soft: rgba(167, 243, 208, 0.18);
+            --accent-primary: #86efac;
+            --accent-secondary: #fef08a;
+            --accent-tertiary: #6ee7b7;
+            --accent-glow: rgba(134, 239, 172, 0.20);
+            --text-title: #f7fee7;
+            --text-sub: #ecfccb;
+            --text-dim: #8fa389;
+        }
+
+        /* Theme 3: Iced Mint Breeze (نسيم النعناع البارد) */
+        html[data-theme="mint-breeze"] {
+            --bg-base: #041414;
+            --bg-card: rgba(10, 32, 32, 0.94);
+            --border-soft: rgba(94, 234, 212, 0.20);
+            --accent-primary: #5eead4;
+            --accent-secondary: #99f6e4;
+            --accent-tertiary: #a7f3d0;
+            --accent-glow: rgba(94, 234, 212, 0.22);
+            --text-title: #f0fdfa;
+            --text-sub: #ccfbf1;
+            --text-dim: #79a8a2;
+        }
+
+        body {
+            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-sub);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overscroll-behavior-y: contain;
+            transition: background-color 0.35s ease, color 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Eye Care Gentle Warm Tint */
+        body.eye-protect-on {
+            filter: sepia(16%) brightness(96%) contrast(97%);
+        }
+
+        /* Strict Monospace English Tabular Digits */
+        .num-font, .font-tech, input[type="number"], input[type="time"], input[type="date"], .gpa-input-box {
+            font-family: 'JetBrains Mono', monospace !important;
+            direction: ltr !important;
+            font-variant-numeric: tabular-nums lining-nums;
+            unicode-bidi: isolate;
+        }
+
+        /* Ambient Dynamic Background Canvas */
+        #bgCanvasMesh, #fxConfettiCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        #fxConfettiCanvas { z-index: 9999; }
+
+        /* Glassmorphic Forest Panels */
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border-soft);
+            border-radius: 1.5rem;
+            box-shadow: var(--glass-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.85), 0 0 22px var(--accent-glow);
+        }
+
+        /* Study Matrix Lecture Nodes */
+        .study-node {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            color: var(--text-dim);
+        }
+
+        .study-node:hover {
+            background: rgba(110, 231, 183, 0.14);
+            border-color: var(--accent-primary);
+            color: #ffffff;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .study-node.done {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: #03140c;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 14px var(--accent-glow);
+            font-weight: 900;
+            transform: scale(1.02);
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            min-height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            font-weight: 700;
+        }
+        .action-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Botanical Matcha Gradient Button */
+        .primary-action-btn {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: #03160e;
+            font-weight: 900;
+            box-shadow: 0 8px 24px -6px var(--accent-glow);
+        }
+        .primary-action-btn:hover {
+            box-shadow: 0 12px 30px -4px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        /* Ambient Sliders */
+        .ambient-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 99px;
+            outline: none;
+        }
+        .ambient-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.15s ease;
+        }
+        .ambient-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+        /* Floating Bottom Dock */
+        .bottom-dock {
+            background: rgba(8, 24, 16, 0.95);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.88), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+        }
+
+        .dock-item.active {
+            color: var(--accent-primary);
+        }
+
+        .dock-item.active .dock-icon {
+            background: var(--badge-tint);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px) scale(1.05);
+            color: var(--accent-primary);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        /* Boss HP Track - Calm Botanical Mint to Chamomile, NO RED */
+        .boss-hp-track {
+            position: relative;
+            width: 100%;
+            height: 14px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            padding: 2px;
+            overflow: hidden;
+            direction: rtl;
+        }
+        .boss-hp-bar {
+            height: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(270deg, #34d399 0%, #6ee7b7 45%, #fde68a 100%);
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+        .svg-icon {
+            display: inline-block;
+            vertical-align: middle;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .safe-bottom { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased relative pb-32">
+
+    <!-- Ambient Visual Canvas Backgrounds -->
+    <canvas id="bgCanvasMesh"></canvas>
+    <canvas id="fxConfettiCanvas"></canvas>
+
+    <!-- ================= TOP HUD NAVBAR ================= -->
+    <header class="sticky top-0 z-40 px-3.5 sm:px-6 py-2.5 bg-black/45 backdrop-blur-2xl border-b border-white/10 shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            
+            <!-- Brand & Indicator -->
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-emerald-300 via-teal-300 to-green-300 p-0.5 flex items-center justify-center shadow-md">
+                    <div class="w-full h-full bg-slate-950/90 rounded-[14px] flex items-center justify-center text-emerald-300 font-tech font-black text-sm">🍵</div>
+                </div>
+                <div class="flex flex-col text-right">
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xs sm:text-sm font-black tracking-tight text-white font-tajawal">AETHERIS <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-lime-200">ACADEMIA</span></span>
+                        <span class="text-[9px] font-tech text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md border border-emerald-800/30 font-bold num-font">2026</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-[10px] text-slate-400 font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span id="topLiveClock" class="num-font text-slate-300">2026/09/01 | 00:00:00</span>
+                        <span class="text-slate-600 hidden sm:inline">•</span>
+                        <span class="text-emerald-300 font-bold hidden sm:inline">100% بدون نت</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eye-Comfort Palettes & Quick Switches -->
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <!-- Eye-Care Blue Light Warm Filter -->
+                <button onclick="toggleEyeComfort()" id="eyeFilterBtn" class="action-btn px-2.5 py-1.5 bg-white/5 border border-white/10 text-amber-200 hover:bg-amber-500/15 rounded-2xl text-[11px] font-bold flex items-center gap-1" title="فلتر الإضاءة الدافئة لراحة العين">
+                    <span>👓</span>
+                    <span class="hidden md:inline">راحة العين</span>
+                </button>
+
+                <!-- Color Themes Selector (Pure Green Botanical Tones) -->
+                <div class="flex items-center bg-black/40 p-1 rounded-2xl border border-white/10 gap-0.5">
+                    <button onclick="setTheme('matcha-forest')" class="w-7 h-7 rounded-xl flex items-center justify-center text-xs transition hover:scale-110" title="ماتشا الغابة العميقة 🍵">🍵</button>
+                    <button onclick="setTheme('sage-olive')" class="w-7 h-7 rounded-xl flex items-center justify-center text-xs transition hover:scale-110" title="شاي الميرمية والزيتون 🫖">🫖</button>
+                    <button onclick="setTheme('mint-breeze')" class="w-7 h-7 rounded-xl flex items-center justify-center text-xs transition hover:scale-110" title="نسيم النعناع البارد 🍃">🍃</button>
+                </div>
+
+                <!-- Academic Streak -->
+                <div class="bg-black/50 px-2.5 sm:px-3 py-1.5 rounded-2xl border border-emerald-500/30 flex items-center gap-1 text-emerald-300 text-xs font-tech font-bold" title="أيام الاستمرارية">
+                    <span>🌿</span>
+                    <span id="hudStreak" class="num-font">1</span>
+                </div>
+
+                <!-- Master Audio Mute/Unmute -->
+                <button onclick="toggleMasterSound()" id="audioMasterBtn" class="action-btn px-2.5 bg-black/50 border border-white/10 text-slate-300 hover:text-emerald-300" title="تشغيل / كتم الصوت">
+                    <svg id="audioMasterIcon" class="svg-icon w-4 h-4" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                </button>
+
+                <!-- Data Backup Vault -->
+                <button onclick="openDataVaultModal()" class="action-btn px-2.5 bg-black/50 border border-white/10 text-slate-300 hover:text-emerald-300" title="خزنة النسخ الاحتياطي">
+                    <svg class="svg-icon w-4 h-4" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-5 relative z-10 space-y-5">
+
+        <!-- ================= SCREEN 1: HOME (SMART UPCOMING DAY & RADAR) ================= -->
+        <section id="screen-home" class="app-screen space-y-5">
+
+            <!-- Dynamic Upcoming Academic Day Smart Schedule Hero Banner -->
+            <div class="glass-card p-5 sm:p-7 border-r-4 border-r-emerald-400/80 shadow-xl relative">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 relative z-10">
+                    <div class="space-y-2 max-w-2xl">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-[10px] font-black text-emerald-300 uppercase tracking-widest font-tech bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/30" id="radarHeaderBadge">
+                                📅 رادار المواعيد الأكاديمية الذكي
+                            </span>
+                            <span class="text-[10px] text-amber-200 bg-amber-950/50 border border-amber-800/30 px-2.5 py-0.5 rounded-full font-bold" id="radarDayIndicator">
+                                جارٍ فحص الجدول...
+                            </span>
+                        </div>
+                        <h2 class="text-base sm:text-2xl font-black text-white tracking-tight leading-snug" id="radarEventTitle">
+                            جارٍ فحص أقرب جدول للمحاضرات والسكاشن...
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300/90 font-medium" id="radarEventDetails">
+                            يعرض النظام تلقائياً جدول أقرب يوم دراسي قادم، وفور انتهاء آخر حصة ينتقل لليوم الذي يليه مباشرة!
+                        </p>
+                    </div>
+
+                    <!-- Countdown Digits -->
+                    <div class="grid grid-cols-4 gap-2 sm:gap-3 w-full lg:w-auto font-tech text-center">
+                        <div class="bg-black/50 border border-emerald-400/20 rounded-2xl p-2.5 sm:p-3 min-w-[65px] shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-emerald-300 block num-font" id="cdDays">00</span>
+                            <span class="text-[9px] text-slate-400 uppercase font-bold">أيام</span>
+                        </div>
+                        <div class="bg-black/50 border border-white/5 rounded-2xl p-2.5 sm:p-3 min-w-[65px] shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-slate-200 block num-font" id="cdHours">00</span>
+                            <span class="text-[9px] text-slate-400 uppercase font-bold">ساعات</span>
+                        </div>
+                        <div class="bg-black/50 border border-teal-400/20 rounded-2xl p-2.5 sm:p-3 min-w-[65px] shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-teal-300 block num-font" id="cdMins">00</span>
+                            <span class="text-[9px] text-slate-400 uppercase font-bold">دقائق</span>
+                        </div>
+                        <div class="bg-black/50 border border-lime-400/20 rounded-2xl p-2.5 sm:p-3 min-w-[65px] shadow-sm">
+                            <span class="text-xl sm:text-3xl font-black text-lime-300 block num-font" id="cdSecs">00</span>
+                            <span class="text-[9px] text-slate-400 uppercase font-bold">ثواني</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Day Timetable Grid (الجدول الذكي المعروض على الصفحة الرئيسية) -->
+                <div class="mt-6 pt-5 border-t border-white/10 space-y-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-base">📋</span>
+                            <h3 class="text-xs sm:text-sm font-black text-white" id="smartScheduleViewHeading">
+                                جدول الحصص والسكاشن في أقرب يوم دراسي:
+                            </h3>
+                        </div>
+                        <!-- Day Picker Chips to browse any day right from home -->
+                        <div class="flex items-center gap-1 overflow-x-auto pb-1" id="homeScheduleDayChips"></div>
+                    </div>
+
+                    <!-- The Dynamic Timetable Cards -->
+                    <div id="homeUpcomingDaySlotsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                <!-- Eye-Comfort Flow Pomodoro Engine -->
+                <div class="glass-card p-5 lg:col-span-7 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="space-y-4 text-center sm:text-right flex-grow w-full sm:w-auto">
+                        <div class="flex items-center justify-center sm:justify-start gap-2">
+                            <span class="text-[10px] font-tech font-bold text-emerald-300 bg-emerald-950/60 px-3 py-0.5 rounded-full border border-emerald-800/30">CALM FOCUS ENGINE</span>
+                            <span class="text-xs text-slate-300">مؤقت التركيز الهادئ</span>
+                        </div>
+                        
+                        <div class="flex gap-1.5 p-1 bg-black/40 rounded-2xl border border-white/10 max-w-sm mx-auto sm:mx-0">
+                            <button onclick="setPomoPreset('focus', 25)" id="pomoBtn-focus" class="flex-grow py-1.5 px-3 text-xs font-bold rounded-xl transition bg-emerald-400/20 text-emerald-300">تركيز (25د)</button>
+                            <button onclick="setPomoPreset('deep', 50)" id="pomoBtn-deep" class="flex-grow py-1.5 px-3 text-xs font-bold rounded-xl transition text-slate-400 hover:text-white">عميق (50د)</button>
+                            <button onclick="setPomoPreset('short', 5)" id="pomoBtn-short" class="flex-grow py-1.5 px-3 text-xs font-bold rounded-xl transition text-slate-400 hover:text-white">راحة (5د)</button>
+                        </div>
+
+                        <div class="flex gap-2.5 max-w-sm mx-auto sm:mx-0">
+                            <button onclick="togglePomoTimer()" id="pomoTriggerBtn" class="flex-grow py-3 px-5 primary-action-btn rounded-2xl text-xs sm:text-sm shadow-md transition transform hover:scale-[1.02] active:scale-95">بدء الجلسة 🍵</button>
+                            <button onclick="openPomoEditModal()" class="action-btn px-3.5 bg-white/5 border border-white/10 text-slate-300 hover:text-emerald-300 hover:bg-emerald-500/10" title="تخصيص الوقت">
+                                <svg class="svg-icon w-4 h-4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Soft Pomodoro Dial -->
+                    <div class="relative w-36 h-36 sm:w-40 sm:h-40 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-full h-full transform -rotate-90 overflow-visible" viewBox="0 0 160 160">
+                            <circle cx="80" cy="80" r="68" stroke="rgba(255,255,255,0.06)" stroke-width="7" fill="transparent" />
+                            <circle id="pomoDialRing" cx="80" cy="80" r="68" stroke="url(#pomoGlowGradient)" stroke-width="7" fill="transparent" 
+                                    stroke-dasharray="427.25" stroke-dashoffset="0" stroke-linecap="round" class="transition-all duration-300" />
+                            <defs>
+                                <linearGradient id="pomoGlowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6ee7b7" />
+                                    <stop offset="100%" stop-color="#a7f3d0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <div class="flex items-center justify-center font-tech text-3xl font-black text-white tracking-wider">
+                                <span id="pomoMinsVal" onclick="openPomoEditModal()" class="cursor-pointer hover:text-emerald-300 border-b border-dashed border-emerald-300/40 num-font">25</span>
+                                <span>:</span>
+                                <span id="pomoSecsVal" onclick="openPomoEditModal()" class="cursor-pointer hover:text-emerald-300 border-b border-dashed border-emerald-300/40 num-font">00</span>
+                            </div>
+                            <span class="text-[9px] text-emerald-300 font-tech font-bold uppercase mt-1 tracking-widest cursor-pointer" onclick="openPomoEditModal()">تعديل بالرقم</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic KPI Matrix -->
+                <div class="glass-card p-5 lg:col-span-5 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+                            <h3 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+                                <span class="p-1.5 bg-emerald-500/20 text-emerald-300 rounded-xl">📊</span>
+                                <span>نبض الإنجاز والمعدل التراكمي</span>
+                            </h3>
+                            <span class="text-[10px] font-tech text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/30" id="kpiSubjectCount">0 مواد</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5 text-xs">
+                            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 space-y-1">
+                                <span class="text-[10px] text-slate-400 block font-bold">المحاضرات المنجزة</span>
+                                <span class="text-xl font-black text-emerald-300 font-tech num-font" id="kpiDoneNodes">0</span>
+                            </div>
+                            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 space-y-1">
+                                <span class="text-[10px] text-slate-400 block font-bold">نسبة التحصيل</span>
+                                <span class="text-xl font-black text-teal-300 font-tech num-font" id="kpiTotalProgress">0%</span>
+                            </div>
+                            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 space-y-1">
+                                <span class="text-[10px] text-slate-400 block font-bold">المعدل الفصلي (GPA)</span>
+                                <span class="text-xl font-black text-amber-200 font-tech num-font" id="kpiGpaVal">0.00</span>
+                            </div>
+                            <div class="bg-black/40 p-3 rounded-2xl border border-white/5 space-y-1">
+                                <span class="text-[10px] text-slate-400 block font-bold">التراكمي الكلي (CGPA)</span>
+                                <span class="text-xl font-black text-lime-300 font-tech num-font" id="kpiCumGpaVal">0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-5 space-y-3">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+                    <div class="flex items-center gap-2">
+                        <span class="p-1.5 bg-emerald-500/20 text-emerald-300 rounded-xl">🌱</span>
+                        <span class="text-xs sm:text-sm font-black text-white">خريطة النشاط والاستمرارية (Study Heatmap)</span>
+                    </div>
+                    <span class="text-[10px] font-tech text-emerald-300">آخر 14 أسبوعاً</span>
+                </div>
+                <div class="overflow-x-auto pb-1">
+                    <div class="grid grid-flow-col grid-rows-7 gap-1.5 min-w-[640px]" id="heatmapGridContainer"></div>
+                </div>
+                <div class="flex items-center justify-end gap-2 text-[10px] text-slate-400 pt-1 font-tech">
+                    <span>قليل</span>
+                    <div class="w-2.5 h-2.5 rounded-sm bg-white/5"></div>
+                    <div class="w-2.5 h-2.5 rounded-sm bg-emerald-950"></div>
+                    <div class="w-2.5 h-2.5 rounded-sm bg-emerald-800"></div>
+                    <div class="w-2.5 h-2.5 rounded-sm bg-emerald-400"></div>
+                    <span>أقصى نشاط</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 2: SUBJECTS MATRIX ================= -->
+        <section id="screen-subjects" class="app-screen space-y-5 hidden">
+            <div class="border-b border-white/10 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-300">📚</span>
+                        <span>مصفوفة المقررات والمحاضرات والسكاشن</span>
+                    </h2>
+                    <p class="text-xs text-slate-400">انقر على أرقام المحاضرات لتسجيل المذاكرة والتحصيل، مع إدارة المهام الفرعية بدقة.</p>
+                </div>
+                <button onclick="openSubjectModal()" class="action-btn px-5 py-2.5 primary-action-btn text-xs rounded-2xl shadow-md transition hover:scale-105">+ إضافة مادة جديدة</button>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                <!-- Subject Cards Grid -->
+                <div id="subjectCardsGrid" class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                
+                <!-- Subtasks Precision Panel -->
+                <div class="lg:col-span-4 glass-card p-5 flex flex-col justify-between h-fit min-h-[380px] space-y-4">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                            <h3 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+                                <span>🎯</span>
+                                <span>المهام الفرعية الدقيقة للقسم</span>
+                            </h3>
+                            <span id="activeSectionBadge" class="text-[10px] font-tech text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-full border border-emerald-800/30">اختر قسماً</span>
+                        </div>
+                        <form onsubmit="handleSubtaskSubmit(event)" class="flex gap-2">
+                            <input type="text" id="subtaskTextInp" placeholder="أضف مهمة أو شيت للمراجعة..." required class="flex-grow bg-black/50 text-slate-200 border border-white/10 focus:border-emerald-300 outline-none rounded-xl px-3.5 py-2 text-xs">
+                            <button type="submit" class="action-btn bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 px-4 text-xs font-bold">إضافة</button>
+                        </form>
+                        <div id="subtasksListWrap" class="space-y-2 max-h-64 overflow-y-auto pr-1">
+                            <div class="text-center py-10 text-slate-500 text-xs">انقر زر (المهام) بجانب أي قسم لعرض قائمته!</div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-mono">
+                        <span>إنجاز المهام:</span>
+                        <span id="subtaskProgressPercent" class="font-tech text-emerald-300 font-bold text-sm num-font">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SCREEN 3: WEEKLY RECURRING SCHEDULE ================= -->
+        <section id="screen-schedule" class="app-screen space-y-5 hidden">
+            <div class="border-b border-white/10 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-300">🗓️</span>
+                        <span>الجدول الأسبوعي الثابت (تكرار دوري أسبوعي)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400">تتسجل المواعيد هنا وتتكرر أسبوعياً تلقائياً، ويعرض النظام الحصص الجارية بدقة.</p>
+                </div>
+                <button onclick="openScheduleModal()" class="action-btn px-5 py-2.5 primary-action-btn text-xs rounded-2xl shadow-md transition hover:scale-105">+ إضافة حصة أسبوعية</button>
+            </div>
+
+            <!-- Day Selector Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1" id="scheduleDayTabs">
+                <button onclick="filterScheduleDay(6)" id="schDayTab-6" class="action-btn px-4 py-2 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex-shrink-0">السبت (أسبوعي)</button>
+                <button onclick="filterScheduleDay(0)" id="schDayTab-0" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الأحد (أسبوعي)</button>
+                <button onclick="filterScheduleDay(1)" id="schDayTab-1" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الإثنين (أسبوعي)</button>
+                <button onclick="filterScheduleDay(2)" id="schDayTab-2" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الثلاثاء (أسبوعي)</button>
+                <button onclick="filterScheduleDay(3)" id="schDayTab-3" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الأربعاء (أسبوعي)</button>
+                <button onclick="filterScheduleDay(4)" id="schDayTab-4" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الخميس (أسبوعي)</button>
+                <button onclick="filterScheduleDay(5)" id="schDayTab-5" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">الجمعة (أسبوعي)</button>
+                <button onclick="filterScheduleDay('all')" id="schDayTab-all" class="action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0">عرض كل الأيام</button>
+            </div>
+
+            <!-- Schedule Cards Grid -->
+            <div id="scheduleSlotsListWrap" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- ================= SCREEN 4: BOSS RAIDS (ONE-TIME EXAMS) ================= -->
+        <section id="screen-deadlines" class="app-screen space-y-5 hidden">
+            <div class="border-b border-white/10 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-300 animate-pulse">⚔️</span>
+                        <span>امتحانات الفصل وغارات الزعماء (حدث لمرة واحدة فقط)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400">شريط طاقة الزعيم (Boss HP) يبدأ ممتلئاً 100% بالكامل وينقص تدريجياً وبدقة حتى موعد الامتحان.</p>
+                </div>
+                <button onclick="openDeadlineModal()" class="action-btn px-5 py-2.5 primary-action-btn text-xs rounded-2xl shadow-md transition hover:scale-105">+ إضافة امتحان / زعيم</button>
+            </div>
+
+            <div id="bossRaidsGridWrap" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- ================= SCREEN 5: GPA SUITE & AMBIENT AUDIO ================= -->
+        <section id="screen-hub" class="app-screen space-y-5 hidden">
+            <div class="border-b border-white/10 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <h2 class="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-300">🎓</span>
+                        <span>حاسبة المعدل التراكمي الرسمية (GPA Suite - معتمدة باللائحة)</span>
+                    </h2>
+                    <p class="text-xs text-slate-400">تطبيق دقيق 100% للائحة الكلية الرسمية (الحد الأدنى للنجاح 60%، والراسب F ينال 0.0 نقطة، وإنذار للمعدل الأقل من 2.0).</p>
+                </div>
+                <button onclick="addNewGpaCourseRow()" class="action-btn px-5 py-2.5 primary-action-btn text-xs rounded-2xl shadow-md transition hover:scale-105">+ إضافة مقرر دراسي</button>
+            </div>
+
+            <!-- Cumulative Inputs + Live Results Banner -->
+            <div class="glass-card p-4 sm:p-5 space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 border-b border-white/10 pb-4">
+                    <div class="space-y-1">
+                        <label class="text-[11px] text-slate-300 font-bold block">الساعات السابقة المعتمدة (قبل هذا الفصل):</label>
+                        <input type="number" id="prevCumHoursInp" value="0" min="0" step="1" oninput="calculateComprehensiveGpa()" class="w-full bg-black/40 text-white font-tech num-font text-xs rounded-xl border border-white/10 p-2.5 outline-none focus:border-emerald-300">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[11px] text-slate-300 font-bold block">المعدل التراكمي السابق (GPA السابق):</label>
+                        <input type="number" id="prevCumGpaInp" value="0.00" min="0" max="4.00" step="0.01" oninput="calculateComprehensiveGpa()" class="w-full bg-black/40 text-white font-tech num-font text-xs rounded-xl border border-white/10 p-2.5 outline-none focus:border-emerald-300">
+                    </div>
+                    <div class="flex items-end">
+                        <div class="w-full bg-emerald-950/40 border border-emerald-800/40 p-2.5 rounded-xl text-center">
+                            <span class="text-[10px] text-emerald-300 font-bold block">حالة الإنذار الأكاديمي (أقل من 2.0):</span>
+                            <span id="gpaWarningBadge" class="text-xs font-black text-emerald-400 font-tech">وضع أكاديمي ممتاز وصحي ✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GPA Overview Metrics -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-emerald-400/20 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 font-bold block">معدل الفصل الحالي</span>
+                        <span id="hubGpaVal" class="text-2xl font-black text-emerald-300 font-tech num-font">0.00</span>
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-teal-400/20 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 font-bold block">المعدل التراكمي الشامل (CGPA)</span>
+                        <span id="hubComprehensiveGpaVal" class="text-2xl font-black text-teal-300 font-tech num-font">0.00</span>
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-lime-400/20 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 font-bold block">التقدير العام (حسب اللائحة)</span>
+                        <span id="hubGpaGradeSummary" class="text-xs sm:text-sm font-black text-emerald-300 block pt-1.5">-</span>
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-amber-400/20 text-center space-y-1">
+                        <span class="text-[10px] text-slate-400 font-bold block">إجمالي الساعات الكلية</span>
+                        <span id="hubGpaTotalAllHoursVal" class="text-2xl font-black text-amber-200 font-tech num-font">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Official Regulation Table Rules Modal / Card -->
+            <div class="glass-card p-3.5 bg-black/40 border border-white/10 text-xs flex flex-wrap items-center justify-between gap-2 text-slate-300">
+                <div class="flex items-center gap-2">
+                    <span class="text-emerald-300 font-bold">📜 مقياس اللائحة المعتمد:</span>
+                    <span>+A (95%+) | A (90%+) | +B (85%+) | B (80%+) | +C (75%+) | C (70%+) | +D (65%+) | D (60%+) | F (أقل من 60% = 0 نقطة)</span>
+                </div>
+                <span class="text-[10px] bg-emerald-950/60 px-2 py-0.5 rounded text-emerald-300 font-tech">الحد الأدنى للنجاح 60%</span>
+            </div>
+
+            <!-- GPA Courses Table - 100% Fixed and Responsive Layout -->
+            <div class="glass-card p-4 sm:p-5 space-y-3">
+                <div class="overflow-x-auto rounded-2xl border border-white/10">
+                    <table class="w-full text-center text-xs min-w-[760px] table-fixed border-collapse">
+                        <thead>
+                            <tr class="bg-white/5 text-slate-300 text-[11px] font-tech border-b border-white/10">
+                                <th class="py-3.5 px-4 text-right w-[28%]">اسم المقرر الدراسي</th>
+                                <th class="py-3.5 px-2 text-center w-[10%]">الساعات</th>
+                                <th class="py-3.5 px-2 text-center w-[10%]">درجتي</th>
+                                <th class="py-3.5 px-2 text-center w-[8%]">العظمى</th>
+                                <th class="py-3.5 px-2 text-center w-[8%]">النسبة</th>
+                                <th class="py-3.5 px-2 text-center w-[8%]">التقدير</th>
+                                <th class="py-3.5 px-2 text-center w-[8%]">النقاط</th>
+                                <th class="py-3.5 px-3 text-center w-[14%]">الحالة</th>
+                                <th class="py-3.5 px-2 text-center w-[6%]">حذف</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hubGpaTableBody" class="divide-y divide-white/5 font-medium"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Offline Audio Synthesizer -->
+            <div class="glass-card p-5 space-y-4">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="p-1.5 bg-emerald-500/20 text-emerald-300 rounded-xl">🎧</span>
+                        <div>
+                            <h3 class="text-xs sm:text-sm font-black text-white">خلاط بيئة الصوت المهدئة للأعصاب (Spatial Ambient Synth)</h3>
+                            <p class="text-[10px] text-slate-400">توليد أصوات المطر والأمواج والموجات الذهنية خوارزمياً وبدون إنترنت.</p>
+                        </div>
+                    </div>
+                    <button onclick="stopAllSynthTracks()" class="action-btn text-[11px] bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-slate-300">إيقاف الأصوات 🔇</button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-white/5 space-y-2">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-slate-200">موجات التركيز الذهني 🧠</span><span id="synthLevel-gamma" class="text-emerald-300 font-tech num-font">0%</span></div>
+                        <input type="range" id="synthTrack-gamma" min="0" max="100" value="0" oninput="updateTrackVolume('gamma', this.value)" class="ambient-slider">
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-white/5 space-y-2">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-slate-200">صوت المطر الغزير 🌧️</span><span id="synthLevel-rain" class="text-emerald-300 font-tech num-font">0%</span></div>
+                        <input type="range" id="synthTrack-rain" min="0" max="100" value="0" oninput="updateTrackVolume('rain', this.value)" class="ambient-slider">
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-white/5 space-y-2">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-slate-200">أمواج المحيط الهادئ 🌊</span><span id="synthLevel-waves" class="text-emerald-300 font-tech num-font">0%</span></div>
+                        <input type="range" id="synthTrack-waves" min="0" max="100" value="0" oninput="updateTrackVolume('waves', this.value)" class="ambient-slider">
+                    </div>
+                    <div class="bg-black/40 p-3.5 rounded-2xl border border-white/5 space-y-2">
+                        <div class="flex justify-between text-xs font-bold"><span class="text-slate-200">مدفأة الحطب الخشبية 🔥</span><span id="synthLevel-fire" class="text-emerald-300 font-tech num-font">0%</span></div>
+                        <input type="range" id="synthTrack-fire" min="0" max="100" value="0" oninput="updateTrackVolume('fire', this.value)" class="ambient-slider">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brain Dump Notepad -->
+            <div class="glass-card p-5 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+                        <span>📝</span>
+                        <span>مفكرة التفريغ الذهني وتدوين الملاحظات السريعة</span>
+                    </h3>
+                    <button onclick="clearBrainDumpLocal()" class="action-btn text-emerald-300 hover:text-emerald-200 text-xs font-bold">مسح المسودة</button>
+                </div>
+                <textarea id="brainDumpArea" oninput="saveBrainDumpLocal()" placeholder="دوّن أي فكرة أو سؤال خطر ببالك أثناء المذاكرة لتفريغ ذهنك والتركيز التام..." 
+                          class="w-full h-28 bg-black/40 text-slate-200 border border-white/10 focus:border-emerald-300 outline-none rounded-2xl p-3.5 text-xs sm:text-sm leading-relaxed resize-none"></textarea>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FLOATING NATIVE MOBILE DOCK ================= -->
+    <nav class="fixed bottom-3 inset-x-3 max-w-lg mx-auto bottom-dock rounded-3xl p-1.5 z-40 flex items-center justify-around safe-bottom">
+        <button onclick="switchAppTab('screen-home')" id="dockBtn-home" class="action-btn dock-item active flex-1 flex flex-col items-center py-1 text-slate-400">
+            <div class="dock-icon w-10 h-10 rounded-2xl flex items-center justify-center border border-transparent transition">
+                <svg class="svg-icon w-5 h-5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+            <span class="text-[9px] font-bold mt-0.5">الرئيسية</span>
+        </button>
+
+        <button onclick="switchAppTab('screen-subjects')" id="dockBtn-subjects" class="action-btn dock-item flex-1 flex flex-col items-center py-1 text-slate-400">
+            <div class="dock-icon w-10 h-10 rounded-2xl flex items-center justify-center border border-transparent transition">
+                <svg class="svg-icon w-5 h-5" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </div>
+            <span class="text-[9px] font-bold mt-0.5">المواد</span>
+        </button>
+
+        <!-- Quick Add Center Elevated Button -->
+        <button onclick="openQuickActionSheet()" class="action-btn w-12 h-12 -mt-5 rounded-2xl bg-gradient-to-tr from-emerald-300 via-teal-300 to-green-300 p-0.5 flex items-center justify-center shadow-lg flex-shrink-0 transition transform hover:scale-110 active:scale-95" title="إضافة سريعة (+)">
+            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-emerald-300 font-tech font-black text-2xl">+</div>
+        </button>
+
+        <button onclick="switchAppTab('screen-schedule')" id="dockBtn-schedule" class="action-btn dock-item flex-1 flex flex-col items-center py-1 text-slate-400">
+            <div class="dock-icon w-10 h-10 rounded-2xl flex items-center justify-center border border-transparent transition">
+                <svg class="svg-icon w-5 h-5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <span class="text-[9px] font-bold mt-0.5">الجدول</span>
+        </button>
+
+        <button onclick="switchAppTab('screen-deadlines')" id="dockBtn-deadlines" class="action-btn dock-item flex-1 flex flex-col items-center py-1 text-slate-400">
+            <div class="dock-icon w-10 h-10 rounded-2xl flex items-center justify-center border border-transparent transition">
+                <svg class="svg-icon w-5 h-5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="text-[9px] font-bold mt-0.5">الامتحانات</span>
+        </button>
+
+        <button onclick="switchAppTab('screen-hub')" id="dockBtn-hub" class="action-btn dock-item flex-1 flex flex-col items-center py-1 text-slate-400">
+            <div class="dock-icon w-10 h-10 rounded-2xl flex items-center justify-center border border-transparent transition">
+                <svg class="svg-icon w-5 h-5" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <span class="text-[9px] font-bold mt-0.5">GPA & صوت</span>
+        </button>
+    </nav>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastNotificationWrap" class="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none w-[92%] max-w-sm"></div>
+
+    <!-- ================= MODALS & POPUPS ================= -->
+    <div id="modalContainerOverlay" class="relative z-50">
+        <!-- Quick Action Sheet -->
+        <div id="sheetQuickAction" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-t-3xl sm:rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-300">⚡</span>
+                        <span>إضافة سريعة</span>
+                    </h3>
+                    <button onclick="closeModalSheet('sheetQuickAction')" class="action-btn text-slate-400 hover:text-white text-xs p-2">✕</button>
+                </div>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                    <button onclick="closeModalSheet('sheetQuickAction'); openSubjectModal();" class="action-btn p-4 bg-white/5 hover:bg-emerald-500/15 border border-white/10 rounded-2xl flex items-center gap-3 font-bold text-white transition">
+                        <span class="p-2 bg-emerald-500/20 rounded-xl text-emerald-300 text-lg">📚</span><span>مادة جديدة</span>
+                    </button>
+                    <button onclick="closeModalSheet('sheetQuickAction'); openScheduleModal();" class="action-btn p-4 bg-white/5 hover:bg-teal-500/15 border border-white/10 rounded-2xl flex items-center gap-3 font-bold text-white transition">
+                        <span class="p-2 bg-teal-500/20 rounded-xl text-teal-300 text-lg">🗓️</span><span>حصة أسبوعية</span>
+                    </button>
+                    <button onclick="closeModalSheet('sheetQuickAction'); openDeadlineModal();" class="action-btn p-4 bg-white/5 hover:bg-emerald-500/15 border border-white/10 rounded-2xl flex items-center gap-3 font-bold text-white transition">
+                        <span class="p-2 bg-emerald-500/20 rounded-xl text-emerald-300 text-lg">⚔️</span><span>امتحان / زعيم</span>
+                    </button>
+                    <button onclick="closeModalSheet('sheetQuickAction'); addNewGpaCourseRow(); switchAppTab('screen-hub');" class="action-btn p-4 bg-white/5 hover:bg-amber-500/15 border border-white/10 rounded-2xl flex items-center gap-3 font-bold text-white transition">
+                        <span class="p-2 bg-amber-500/20 rounded-xl text-amber-200 text-lg">🎓</span><span>مقرر GPA</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subject Modal -->
+        <div id="modalSubject" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-md w-full p-5 sm:p-6 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-xs sm:text-sm font-black text-white" id="modalSubjectTitle">إضافة مقرر دراسي جديد</h3>
+                    <button onclick="closeModalSheet('modalSubject')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <form onsubmit="handleSubjectSubmit(event)" class="space-y-3.5">
+                    <input type="hidden" id="subEditId" value="">
+                    <div class="space-y-1">
+                        <label class="text-[10px] text-slate-300 font-bold">اسم المقرر الدراسي</label>
+                        <input type="text" id="subNameInp" required placeholder="مثال: هندسة البرمجيات وتصميم النظم" class="w-full bg-black/50 text-white rounded-2xl border border-white/10 focus:border-emerald-300 outline-none py-2.5 px-3.5 text-xs font-bold">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] text-slate-300 font-bold">الأيقونة الرمزية للمادة:</label>
+                        <div class="grid grid-cols-8 gap-1 p-2 bg-black/50 rounded-2xl border border-white/10" id="subIconPickerGrid"></div>
+                        <input type="hidden" id="subIconInp" value="💻">
+                    </div>
+                    <div class="flex gap-2.5 justify-end text-xs font-bold pt-2">
+                        <button type="button" onclick="closeModalSheet('modalSubject')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                        <button type="submit" class="action-btn flex-1 py-2.5 primary-action-btn rounded-xl">حفظ المقرر</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section Modal -->
+        <div id="modalSection" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-xs sm:text-sm font-black text-white" id="modalSectionTitle">إضافة قسم دراسي</h3>
+                    <button onclick="closeModalSheet('modalSection')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <form onsubmit="handleSectionSubmit(event)" class="space-y-3.5">
+                    <input type="hidden" id="secParentSubId" value=""><input type="hidden" id="secEditId" value="">
+                    <div class="space-y-1">
+                        <label class="text-[10px] text-slate-300 font-bold">عنوان القسم أو النوع</label>
+                        <input type="text" id="secNameInp" required placeholder="مثال: المحاضرات النظرية" class="w-full bg-black/50 text-white rounded-2xl border border-white/10 px-3.5 py-2.5 text-xs font-bold">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-slate-300 font-bold">التصنيف</label>
+                            <select id="secTypeSelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none">
+                                <option value="محاضرات">محاضرات 📚</option><option value="سكاشن">سكاشن 🧪</option><option value="شيتات">شيتات 💻</option><option value="كويزات">كويزات 📝</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-slate-300 font-bold">عدد الأجزاء (أرقام)</label>
+                            <input type="text" inputmode="numeric" id="secCountInp" value="8" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2.5 text-xs font-bold text-center font-tech num-font">
+                        </div>
+                    </div>
+                    <div class="flex gap-2.5 justify-end text-xs font-bold pt-2">
+                        <button type="button" onclick="closeModalSheet('modalSection')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                        <button type="submit" class="action-btn flex-1 py-2.5 primary-action-btn rounded-xl">حفظ القسم</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Schedule Slot Modal -->
+        <div id="modalSchedule" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-emerald-300 text-base">🔄</span>
+                        <h3 class="text-xs sm:text-sm font-black text-white" id="modalScheduleTitle">إضافة موعد أسبوعي متكرر</h3>
+                    </div>
+                    <button onclick="closeModalSheet('modalSchedule')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <form onsubmit="handleScheduleSubmit(event)" class="space-y-3.5">
+                    <input type="hidden" id="schEditId" value="">
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-slate-300 font-bold">اليوم (يتكرر أسبوعياً)</label>
+                            <select id="schDaySelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none font-bold">
+                                <option value="6">السبت (أسبوعي)</option><option value="0">الأحد (أسبوعي)</option><option value="1">الإثنين (أسبوعي)</option><option value="2">الثلاثاء (أسبوعي)</option><option value="3">الأربعاء (أسبوعي)</option><option value="4">الخميس (أسبوعي)</option><option value="5">الجمعة (أسبوعي)</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-slate-300 font-bold">نوع الحصة</label>
+                            <select id="schTypeSelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none">
+                                <option value="محاضرة">محاضرة 📚</option><option value="سكشن">سكشن 🧪</option><option value="معمل">معمل عملي 🔬</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[10px] text-slate-300 font-bold">المقرر الدراسي</label>
+                        <select id="schSubSelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none font-bold"></select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">وقت البدء (أرقام)</label><input type="time" id="schStartInp" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs font-tech num-font"></div>
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">وقت الانتهاء (أرقام)</label><input type="time" id="schEndInp" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs font-tech num-font"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">المكان / المدرج</label><input type="text" id="schLocInp" placeholder="مدرج 4" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs"></div>
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">المحاضر / المعيد</label><input type="text" id="schInstInp" placeholder="د. أحمد" class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs"></div>
+                    </div>
+                    <div class="flex gap-2.5 justify-end text-xs font-bold pt-2">
+                        <button type="button" onclick="closeModalSheet('modalSchedule')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                        <button type="submit" class="action-btn flex-1 py-2.5 primary-action-btn rounded-xl">حفظ بالجدول الأسبوعي</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Deadline / Boss Modal -->
+        <div id="modalDeadline" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-emerald-300 text-base">🎯</span>
+                        <h3 class="text-xs sm:text-sm font-black text-white" id="modalDeadlineTitle">إضافة امتحان (حدث لمرة واحدة فقط)</h3>
+                    </div>
+                    <button onclick="closeModalSheet('modalDeadline')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <form onsubmit="handleDeadlineSubmit(event)" class="space-y-3.5">
+                    <input type="hidden" id="deadEditId" value="">
+                    <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">اسم الامتحان / الاختبار</label><input type="text" id="deadNameInp" required placeholder="مثال: امتحان الفاينل النهائي" class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2.5 px-3.5 text-xs font-bold"></div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-slate-300 font-bold">التصنيف</label>
+                            <select id="deadCatSelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none font-bold">
+                                <option value="ميدتيرم">ميدتيرم 📝</option><option value="فاينل">فاينل 🎓</option><option value="عملي">عملي / شفوي 🔬</option><option value="شيت">تسليم شيت 💻</option><option value="مشروع">مشروع تخرج 🚀</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">المقرر</label><select id="deadSubSelect" class="w-full bg-black/50 text-slate-200 border border-white/10 rounded-2xl px-3 py-2.5 text-xs outline-none font-bold"></select></div>
+                    </div>
+                    <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">تاريخ الاختبار (YYYY-MM-DD)</label><input type="date" id="deadDateInp" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2.5 px-3 text-xs font-tech num-font"></div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">يبدأ الساعة (أرقام)</label><input type="time" id="deadStartTimeInp" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs font-tech num-font"></div>
+                        <div class="space-y-1"><label class="text-[10px] text-slate-300 font-bold">ينتهي الساعة (أرقام)</label><input type="time" id="deadEndTimeInp" required class="w-full bg-black/50 text-white rounded-2xl border border-white/10 py-2 px-3 text-xs font-tech num-font"></div>
+                    </div>
+                    <div class="flex gap-2.5 justify-end text-xs font-bold pt-2">
+                        <button type="button" onclick="closeModalSheet('modalDeadline')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                        <button type="submit" class="action-btn flex-1 py-2.5 primary-action-btn rounded-xl">حفظ الامتحان</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pomodoro Edit Modal -->
+        <div id="modalPomoEdit" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-xs w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-xs sm:text-sm font-black text-white">تخصيص مؤقت الجلسة</h3>
+                    <button onclick="closeModalSheet('modalPomoEdit')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <div class="grid grid-cols-2 gap-3 text-center">
+                    <div class="bg-black/50 p-3 rounded-2xl border border-white/10 space-y-2">
+                        <label class="text-[10px] text-slate-400 font-bold block">الدقائق</label>
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="adjustEditPomoMins(-1)" class="action-btn w-8 h-8 rounded-xl bg-white/5 text-slate-300 font-tech font-bold text-xs">-</button>
+                            <input type="text" inputmode="numeric" id="editPomoMinsInp" value="25" class="w-12 bg-black/80 text-center font-tech font-black text-emerald-300 text-base rounded-xl border border-emerald-300/30 outline-none num-font">
+                            <button onclick="adjustEditPomoMins(1)" class="action-btn w-8 h-8 rounded-xl bg-white/5 text-slate-300 font-tech font-bold text-xs">+</button>
+                        </div>
+                    </div>
+                    <div class="bg-black/50 p-3 rounded-2xl border border-white/10 space-y-2">
+                        <label class="text-[10px] text-slate-400 font-bold block">الثواني</label>
+                        <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="adjustEditPomoSecs(-5)" class="action-btn w-8 h-8 rounded-xl bg-white/5 text-slate-300 font-tech font-bold text-xs">-</button>
+                            <input type="text" inputmode="numeric" id="editPomoSecsInp" value="0" class="w-12 bg-black/80 text-center font-tech font-black text-slate-200 text-base rounded-xl border border-white/10 outline-none num-font">
+                            <button onclick="adjustEditPomoSecs(5)" class="action-btn w-8 h-8 rounded-xl bg-white/5 text-slate-300 font-tech font-bold text-xs">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 justify-end text-xs font-bold pt-2">
+                    <button type="button" onclick="closeModalSheet('modalPomoEdit')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                    <button type="button" onclick="saveCustomPomoTime()" class="action-btn flex-1 py-2.5 primary-action-btn rounded-xl">تطبيق 🌿</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Vault Backup Modal -->
+        <div id="sheetDataVault" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                    <h3 class="text-xs sm:text-sm font-black text-white flex items-center gap-2">
+                        <span class="text-emerald-400">💾</span>
+                        <span>خزنة النسخ الاحتياطي (JSON Vault)</span>
+                    </h3>
+                    <button onclick="closeModalSheet('sheetDataVault')" class="action-btn text-slate-400 text-xs p-2">✕</button>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">بياناتكِ محفوظة محلياً على جهازكِ 100% وبدون إنترنت. يمكنكِ تصدير نسخة احتياطية أو استعادتها في أي وقت بأمان تام.</p>
+                <div class="space-y-3 pt-1">
+                    <button onclick="downloadJsonVault()" class="action-btn w-full py-3 bg-emerald-600/80 hover:bg-emerald-600 text-white font-bold text-xs rounded-2xl transition shadow-md">تنزيل ملف النسخة الاحتياطية (JSON) 💾</button>
+                    <label class="action-btn w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 font-bold text-xs rounded-2xl transition flex items-center justify-center gap-2 cursor-pointer">
+                        <span>استعادة نسخة JSON من الجهاز 📂</span>
+                        <input type="file" id="jsonUploadFile" accept=".json" onchange="importJsonVault(event)" class="hidden">
+                    </label>
+                </div>
+                <div class="flex justify-end pt-2"><button type="button" onclick="closeModalSheet('sheetDataVault')" class="action-btn w-full py-2.5 bg-slate-800 text-slate-300 font-bold text-xs rounded-xl">إغلاق</button></div>
+            </div>
+        </div>
+
+        <!-- Confirmation Action Dialog (Zero Red) -->
+        <div id="modalConfirm" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden opacity-0 transition-all duration-200">
+            <div class="glass-card rounded-3xl max-w-xs w-full p-5 space-y-4 shadow-2xl">
+                <h3 class="text-xs sm:text-sm font-black text-white" id="confirmTitle">تأكيد الإجراء</h3>
+                <p id="confirmMessage" class="text-xs text-slate-300 leading-relaxed">هل أنت متأكد من تنفيذ هذا الإجراء؟</p>
+                <div class="flex gap-2.5 justify-end text-xs font-bold pt-2">
+                    <button onclick="closeModalSheet('modalConfirm')" class="action-btn flex-1 py-2.5 bg-white/5 border border-white/10 text-slate-300 rounded-xl">إلغاء</button>
+                    <button onclick="executeConfirmedAction()" class="action-btn flex-1 py-2.5 bg-emerald-600/90 hover:bg-emerald-600 text-slate-950 font-black rounded-xl shadow-md">تأكيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* =========================================================================
+           1. 100% OFFLINE WEB AUDIO SYNTHESIZER ENGINE (خوارزمي رياضي بدون إنترنت)
+           ========================================================================= */
+        class SpatialAudioSynthEngine {
+            constructor() {
+                this.ctx = null;
+                this.isMuted = false;
+                this.activeChannels = {};
+                this.trackVolumes = { gamma: 0, rain: 0, waves: 0, fire: 0 };
+            }
+            initContext() {
+                if (!this.ctx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    if (AudioContextClass) this.ctx = new AudioContextClass();
+                }
+                if (this.ctx && this.ctx.state === 'suspended') { this.ctx.resume(); }
+            }
+            playBeep(freq = 520, wave = 'sine', duration = 0.08, volume = 0.035) {
+                if (this.isMuted) return;
+                try {
+                    this.initContext();
+                    if (!this.ctx) return;
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = wave;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(volume, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+                    osc.connect(gain); gain.connect(this.ctx.destination);
+                    osc.start(); osc.stop(this.ctx.currentTime + duration);
+                } catch(e) {}
+            }
+            playChime() {
+                if (this.isMuted) return;
+                [523.25, 659.25, 783.99, 1046.50].forEach((f, idx) => {
+                    setTimeout(() => this.playBeep(f, 'triangle', 0.22, 0.035), idx * 75);
+                });
+            }
+            generateNoiseBuffer() {
+                const bufferSize = 2 * this.ctx.sampleRate;
+                const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) { data[i] = Math.random() * 2 - 1; }
+                return buffer;
+            }
+            setTrackVol(channel, percent) {
+                this.initContext();
+                this.trackVolumes[channel] = parseFloat(percent) / 100;
+                if (this.isMuted) return;
+                if (this.activeChannels[channel]) {
+                    this.activeChannels[channel].gain.gain.setTargetAtTime(this.trackVolumes[channel] * 0.12, this.ctx.currentTime, 0.1);
+                    if (this.trackVolumes[channel] <= 0) this.stopChannel(channel);
+                } else if (this.trackVolumes[channel] > 0) {
+                    this.startChannel(channel);
+                }
+            }
+            startChannel(channel) {
+                if (this.isMuted) return;
+                this.initContext();
+                this.stopChannel(channel);
+                if (this.trackVolumes[channel] <= 0) return;
+                try {
+                    if (channel === 'gamma') {
+                        const oscL = this.ctx.createOscillator();
+                        const oscR = this.ctx.createOscillator();
+                        const gain = this.ctx.createGain();
+                        oscL.frequency.setValueAtTime(200, this.ctx.currentTime);
+                        oscR.frequency.setValueAtTime(240, this.ctx.currentTime);
+                        gain.gain.setValueAtTime(this.trackVolumes.gamma * 0.08, this.ctx.currentTime);
+                        oscL.connect(gain); oscR.connect(gain); gain.connect(this.ctx.destination);
+                        oscL.start(); oscR.start();
+                        this.activeChannels.gamma = { oscL, oscR, gain };
+                    } else if (channel === 'rain' || channel === 'waves' || channel === 'fire') {
+                        const noise = this.ctx.createBufferSource();
+                        noise.buffer = this.generateNoiseBuffer();
+                        noise.loop = true;
+                        const filter = this.ctx.createBiquadFilter();
+                        filter.type = channel === 'rain' ? 'lowpass' : (channel === 'waves' ? 'bandpass' : 'highpass');
+                        filter.frequency.setValueAtTime(channel === 'rain' ? 620 : (channel === 'waves' ? 360 : 1200), this.ctx.currentTime);
+                        const gain = this.ctx.createGain();
+                        gain.gain.setValueAtTime(this.trackVolumes[channel] * 0.12, this.ctx.currentTime);
+                        noise.connect(filter).connect(gain).connect(this.ctx.destination);
+                        noise.start();
+                        this.activeChannels[channel] = { noise, gain };
+                    }
+                } catch(e) {}
+            }
+            stopChannel(channel) {
+                if (this.activeChannels[channel]) {
+                    try {
+                        if (channel === 'gamma') {
+                            this.activeChannels.gamma.oscL.stop();
+                            this.activeChannels.gamma.oscR.stop();
+                        } else if (this.activeChannels[channel].noise) {
+                            this.activeChannels[channel].noise.stop();
+                        }
+                    } catch(e) {}
+                    delete this.activeChannels[channel];
+                }
+            }
+            toggleMuteAll() {
+                this.isMuted = !this.isMuted;
+                if (this.isMuted) {
+                    Object.keys(this.trackVolumes).forEach(ch => this.stopChannel(ch));
+                } else {
+                    Object.keys(this.trackVolumes).forEach(ch => {
+                        if (this.trackVolumes[ch] > 0) this.startChannel(ch);
+                    });
+                }
+                return this.isMuted;
+            }
+        }
+        const audioEngine = new SpatialAudioSynthEngine();
+
+        /* =========================================================================
+           2. GLOBAL STATE & PERSISTENCE
+           ========================================================================= */
+        const APP_STORAGE_KEY = 'aetheris_academia_matcha_2026';
+        let currentTheme = 'matcha-forest';
+        let isEyeCareFilterActive = false;
+        let subjects = [], sections = [], scheduleSlots = [], deadlines = [], gpaCourses = [], studyHeatmap = {};
+        let userLevel = 1, userXP = 0, streakDays = 1, lastVisitDate = new Date().toDateString();
+        let prevCumHours = 0, prevCumGpa = 0.0;
+        let currentSelectedSectionId = null, currentActiveScheduleDay = 6, pendingConfirmFn = null;
+        let pomoMins = 25, pomoSecs = 0, pomoTotalSecs = 1500, pomoTimerObj = null, pomoIsActive = false, pomoCurrentMode = 'focus';
+        let homeSchedulePreviewDay = null; // null means auto-detect upcoming day
+
+        const themeLabels = {
+            'matcha-forest': 'ماتشا الغابة العميقة 🍵',
+            'sage-olive': 'شاي الميرمية والزيتون 🫖',
+            'mint-breeze': 'نسيم النعناع البارد 🍃'
+        };
+
+        function setTheme(themeName) {
+            currentTheme = themeName;
+            document.documentElement.setAttribute('data-theme', themeName);
+            document.documentElement.className = `theme-${themeName}`;
+            autoSaveToLocalVault();
+            showToast(`✨ تم تفعيل ثيم ${themeLabels[themeName] || themeName}`);
+        }
+
+        function toggleEyeComfort() {
+            isEyeCareFilterActive = !isEyeCareFilterActive;
+            if (isEyeCareFilterActive) {
+                document.body.classList.add('eye-protect-on');
+                const btn = document.getElementById('eyeFilterBtn');
+                if (btn) btn.classList.add('bg-amber-500/20', 'border-amber-400/40', 'text-amber-300');
+                showToast('👓 تم تفعيل فلتر حماية العين المريح للقراءة');
+            } else {
+                document.body.classList.remove('eye-protect-on');
+                const btn = document.getElementById('eyeFilterBtn');
+                if (btn) btn.classList.remove('bg-amber-500/20', 'border-amber-400/40', 'text-amber-300');
+                showToast('👓 تم إيقاف فلتر حماية العين');
+            }
+            autoSaveToLocalVault();
+        }
+
+        function autoSaveToLocalVault() {
+            try {
+                const data = {
+                    currentTheme,
+                    isEyeCareFilterActive,
+                    subjects, sections, scheduleSlots, deadlines, gpaCourses, studyHeatmap,
+                    userLevel, userXP, streakDays, lastVisitDate, prevCumHours, prevCumGpa,
+                    brainDump: document.getElementById('brainDumpArea') ? document.getElementById('brainDumpArea').value : ''
+                };
+                localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(data));
+            } catch(e) {}
+        }
+
+        function loadFromLocalVault() {
+            try {
+                const raw = localStorage.getItem(APP_STORAGE_KEY);
+                if (raw) {
+                    const data = JSON.parse(raw);
+                    currentTheme = data.currentTheme || 'matcha-forest';
+                    isEyeCareFilterActive = !!data.isEyeCareFilterActive;
+                    subjects = data.subjects || [];
+                    sections = data.sections || [];
+                    scheduleSlots = data.scheduleSlots || [];
+                    deadlines = data.deadlines || [];
+                    gpaCourses = data.gpaCourses || [];
+                    studyHeatmap = data.studyHeatmap || {};
+                    userLevel = data.userLevel || 1;
+                    userXP = data.userXP || 0;
+                    streakDays = data.streakDays || 1;
+                    prevCumHours = data.prevCumHours || 0;
+                    prevCumGpa = data.prevCumGpa || 0.0;
+                    lastVisitDate = data.lastVisitDate || new Date().toDateString();
+                    if (document.getElementById('brainDumpArea') && data.brainDump) { 
+                        document.getElementById('brainDumpArea').value = data.brainDump; 
+                    }
+                    if (document.getElementById('prevCumHoursInp')) {
+                        document.getElementById('prevCumHoursInp').value = prevCumHours;
+                        document.getElementById('prevCumGpaInp').value = prevCumGpa;
+                    }
+                } else {
+                    seedDefaultData();
+                }
+            } catch(e) { seedDefaultData(); }
+            
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            document.documentElement.className = `theme-${currentTheme}`;
+            if (isEyeCareFilterActive) {
+                document.body.classList.add('eye-protect-on');
+                const btn = document.getElementById('eyeFilterBtn');
+                if (btn) btn.classList.add('bg-amber-500/20', 'border-amber-400/40', 'text-amber-300');
+            }
+            verifyStreak();
+        }
+
+        function seedDefaultData() {
+            currentTheme = 'matcha-forest';
+            isEyeCareFilterActive = false;
+            subjects = [
+                { id: 'sub-1', name: 'البرمجة وهياكل البيانات', icon: '💻', createdAt: Date.now() },
+                { id: 'sub-2', name: 'الرياضيات المتقطعة', icon: '📐', createdAt: Date.now() },
+                { id: 'sub-3', name: 'قواعد البيانات العلائقية', icon: '🗄️', createdAt: Date.now() }
+            ];
+            sections = [
+                { id: 'sec-1', subjectId: 'sub-1', type: 'محاضرات', name: 'الخوارزميات وهياكل البيانات', count: 8, completedNodes: [1, 2, 3], subtasks: [{ id: 'st-1', text: 'مراجعة شيت الأشجار الثنائية Trees', done: true }], createdAt: Date.now() },
+                { id: 'sec-2', subjectId: 'sub-1', type: 'سكاشن', name: 'التطبيقات العملية C++', count: 6, completedNodes: [1], subtasks: [], createdAt: Date.now() },
+                { id: 'sec-3', subjectId: 'sub-2', type: 'محاضرات', name: 'نظرية المخططات والرسوم', count: 10, completedNodes: [1, 2], subtasks: [], createdAt: Date.now() }
+            ];
+            // Weekly timetable: Monday, Tuesday etc.
+            scheduleSlots = [
+                { id: 'sch-1', dayOfWeek: 1, subjectId: 'sub-1', type: 'محاضرة', startTime: '09:00', endTime: '11:00', location: 'مدرج 4', instructor: 'د. أحمد' },
+                { id: 'sch-2', dayOfWeek: 1, subjectId: 'sub-2', type: 'سكشن', startTime: '11:30', endTime: '13:00', location: 'معمل 2', instructor: 'م. سارة' },
+                { id: 'sch-3', dayOfWeek: 2, subjectId: 'sub-3', type: 'محاضرة', startTime: '10:00', endTime: '12:00', location: 'قاعة 105', instructor: 'د. محمود' }
+            ];
+            // One-time only Exam / Boss Raid
+            const examDate = new Date(Date.now() + 4*24*60*60*1000); examDate.setHours(10,0,0,0);
+            const examEnd = new Date(examDate.getTime() + 120*60*1000);
+            deadlines = [
+                { id: 'dl-1', name: 'امتحان الميدتيرم الفصلي الشامل', category: 'ميدتيرم', subjectId: 'sub-1', datetime: examDate.toISOString(), endDatetime: examEnd.toISOString(), createdAt: Date.now() }
+            ];
+            // GPA courses following official faculty regulations (>=60% passes, <60% is F 0.0 pts)
+            gpaCourses = [
+                { id: 'gpa-1', name: 'البرمجة وهياكل البيانات', hours: 3, myScore: 88, maxScore: 100 },
+                { id: 'gpa-2', name: 'الرياضيات المتقطعة', hours: 3, myScore: 76, maxScore: 100 },
+                { id: 'gpa-3', name: 'قواعد البيانات العلائقية', hours: 3, myScore: 0, maxScore: 100 }
+            ];
+            autoSaveToLocalVault();
+        }
+
+        function verifyStreak() {
+            const today = new Date().toDateString();
+            if (lastVisitDate !== today) {
+                const yest = new Date(Date.now() - 86400000).toDateString();
+                streakDays = (lastVisitDate === yest) ? streakDays + 1 : 1;
+                lastVisitDate = today;
+                autoSaveToLocalVault();
+            }
+            const el = document.getElementById('hudStreak');
+            if (el) el.innerText = streakDays;
+        }
+
+        function gainExperience(amt) {
+            userXP += amt;
+            if (userXP >= 100) { 
+                userLevel += Math.floor(userXP/100); 
+                userXP %= 100; 
+                audioEngine.playChime(); 
+                triggerConfetti(); 
+                showToast(`🌟 أحسنتِ! ارتقيتِ إلى المستوى ${userLevel}!`);
+            }
+            autoSaveToLocalVault();
+        }
+
+        function showToast(msg) {
+            const wrap = document.getElementById('toastNotificationWrap');
+            if (!wrap) return;
+            const t = document.createElement('div');
+            t.className = 'pointer-events-auto glass-card p-3.5 shadow-2xl text-white text-xs font-bold flex items-center justify-between gap-3 transform transition-all duration-300 border-emerald-400/30';
+            t.innerHTML = `<span>${msg}</span><button onclick="this.parentElement.remove()" class="action-btn text-slate-400 hover:text-white p-1">✕</button>`;
+            wrap.appendChild(t);
+            setTimeout(() => {
+                t.style.opacity = '0';
+                t.style.transform = 'translateY(10px)';
+                setTimeout(() => t.remove(), 300);
+            }, 3500);
+        }
+
+        function switchAppTab(screenId) {
+            document.querySelectorAll('.app-screen').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('.dock-item').forEach(b => b.classList.remove('active'));
+            const target = document.getElementById(screenId);
+            if (target) target.classList.remove('hidden');
+            const key = screenId.replace('screen-', '');
+            const btn = document.getElementById(`dockBtn-${key}`);
+            if (btn) btn.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            audioEngine.playBeep(560, 'sine', 0.04, 0.02);
+        }
+
+        /* =========================================================================
+           3. SMART UPCOMING ACADEMIC DAY ENGINE (الرصد التلقائي لأقرب يوم والانتقال الذاتي)
+           ========================================================================= */
+        const dayNamesArabic = { 6: 'السبت', 0: 'الأحد', 1: 'الإثنين', 2: 'الثلاثاء', 3: 'الأربعاء', 4: 'الخميس', 5: 'الجمعة' };
+
+        /**
+         * Smart Upcoming Day Detection Logic:
+         * 1) Checks today's classes: If today has classes and the last one has NOT yet finished, today is displayed.
+         * 2) If today has no classes OR today's classes have all finished:
+         *    - Iterates forward (day+1, day+2... day+6) to find the nearest upcoming day with classes.
+         *    - Displays that upcoming day's schedule directly on the home screen!
+         *    - As soon as that day finishes its last class, it automatically rolls to the next day!
+         */
+        function detectSmartUpcomingAcademicDay() {
+            const now = new Date();
+            const curDay = now.getDay();
+            const curTimeMinutes = now.getHours() * 60 + now.getMinutes();
+
+            const toMinutes = (timeStr) => {
+                if (!timeStr) return 0;
+                const [h, m] = timeStr.split(':').map(Number);
+                return h * 60 + m;
+            };
+
+            // Check today
+            const todaySlots = scheduleSlots.filter(s => parseInt(s.dayOfWeek) === curDay);
+            if (todaySlots.length > 0) {
+                let maxEndMin = 0;
+                todaySlots.forEach(s => {
+                    const endM = toMinutes(s.endTime);
+                    if (endM > maxEndMin) maxEndMin = endM;
+                });
+
+                if (curTimeMinutes < maxEndMin) {
+                    return { day: curDay, isToday: true, isUpcoming: false, daysOffset: 0 };
+                }
+            }
+
+            // Today is finished or has no classes: search next 1..7 days
+            for (let offset = 1; offset <= 7; offset++) {
+                const checkDay = (curDay + offset) % 7;
+                const candidateSlots = scheduleSlots.filter(s => parseInt(s.dayOfWeek) === checkDay);
+                if (candidateSlots.length > 0) {
+                    return { day: checkDay, isToday: false, isUpcoming: true, daysOffset: offset };
+                }
+            }
+
+            return { day: (curDay + 1) % 7, isToday: false, isUpcoming: true, daysOffset: 1 };
+        }
+
+        function setHomeSchedulePreview(dayVal) {
+            homeSchedulePreviewDay = dayVal;
+            refreshSmartHomeSchedule();
+        }
+
+        function refreshSmartHomeSchedule() {
+            const smart = detectSmartUpcomingAcademicDay();
+            const activeDay = (homeSchedulePreviewDay !== null && homeSchedulePreviewDay !== 'smart') 
+                                ? parseInt(homeSchedulePreviewDay) 
+                                : smart.day;
+            
+            const isSmartMode = (homeSchedulePreviewDay === null || homeSchedulePreviewDay === 'smart');
+            const dayName = dayNamesArabic[activeDay] || '';
+
+            // Update Header Indicator
+            const ind = document.getElementById('radarDayIndicator');
+            if (ind) {
+                if (isSmartMode) {
+                    if (smart.isToday) {
+                        ind.innerText = `يوم ${dayName} (جدول اليوم - نشط حالياً)`;
+                        ind.className = 'text-[10px] text-emerald-300 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-0.5 rounded-full font-bold';
+                    } else {
+                        ind.innerText = `يوم ${dayName} (أقرب يوم دراسي قادم - بعد ${smart.daysOffset} أيام)`;
+                        ind.className = 'text-[10px] text-emerald-300 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-0.5 rounded-full font-bold';
+                    }
+                } else {
+                    ind.innerText = `معاينة يدوية: يوم ${dayName}`;
+                    ind.className = 'text-[10px] text-amber-200 bg-amber-950/60 border border-amber-800/40 px-2.5 py-0.5 rounded-full font-bold';
+                }
+            }
+
+            const heading = document.getElementById('smartScheduleViewHeading');
+            if (heading) {
+                heading.innerText = `حصص وسكاشن يوم (${dayName})${isSmartMode && !smart.isToday ? ' [أقرب جدول قادم تلقائياً]' : ''}:`;
+            }
+
+            // Render day picker chips on home
+            const chipsWrap = document.getElementById('homeScheduleDayChips');
+            if (chipsWrap) {
+                const daysList = [6, 0, 1, 2, 3, 4, 5];
+                let chipsHtml = `
+                    <button onclick="setHomeSchedulePreview('smart')" class="action-btn px-2.5 py-1 rounded-xl text-[10px] font-bold transition flex-shrink-0 ${isSmartMode ? 'bg-emerald-400/25 border border-emerald-400/50 text-emerald-300 shadow-sm' : 'bg-white/5 border border-white/10 text-slate-400'}">
+                        ⚡ الذكي التلقائي
+                    </button>
+                `;
+                daysList.forEach(d => {
+                    const isCurrent = (!isSmartMode && activeDay === d);
+                    chipsHtml += `
+                        <button onclick="setHomeSchedulePreview(${d})" class="action-btn px-2 py-1 rounded-xl text-[10px] font-bold transition flex-shrink-0 ${isCurrent ? 'bg-emerald-400/25 border border-emerald-400/50 text-emerald-300' : 'bg-white/5 border border-white/10 text-slate-400 hover:text-white'}">
+                            ${dayNamesArabic[d]}
+                        </button>
+                    `;
+                });
+                chipsWrap.innerHTML = chipsHtml;
+            }
+
+            // Render Slots for this upcoming day
+            const slotsContainer = document.getElementById('homeUpcomingDaySlotsGrid');
+            if (!slotsContainer) return;
+            slotsContainer.innerHTML = '';
+
+            const daySlots = scheduleSlots.filter(s => parseInt(s.dayOfWeek) === activeDay);
+            daySlots.sort((a,b) => (a.startTime || '').localeCompare(b.startTime || ''));
+
+            if (daySlots.length === 0) {
+                slotsContainer.innerHTML = `
+                    <div class="col-span-full py-8 text-center text-xs text-slate-400 bg-white/[0.02] border border-white/5 rounded-2xl">
+                        🍃 لا توجد محاضرات أو سكاشن مجدولة ليوم (${dayName})! يوم هادئ ومريح.
+                    </div>
+                `;
+                return;
+            }
+
+            const now = new Date();
+            const curTimeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+            const isReallyToday = (now.getDay() === activeDay);
+
+            daySlots.forEach(slot => {
+                const sub = subjects.find(s => s.id === slot.subjectId);
+                const isOngoing = isReallyToday && (curTimeStr >= slot.startTime && curTimeStr <= slot.endTime);
+                const hasPassed = isReallyToday && (curTimeStr > slot.endTime);
+
+                slotsContainer.insertAdjacentHTML('beforeend', `
+                    <div class="p-3.5 rounded-2xl border transition-all relative ${
+                        isOngoing 
+                            ? 'bg-emerald-950/40 border-emerald-300/60 shadow-[0_0_20px_rgba(110,231,183,0.2)]' 
+                            : hasPassed 
+                                ? 'bg-black/30 border-white/5 opacity-60' 
+                                : 'bg-black/40 border-white/10 hover:border-emerald-300/40'
+                    }">
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <span class="text-[9px] font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-800/30 px-2 py-0.5 rounded-full">
+                                ${slot.type}
+                            </span>
+                            ${
+                                isOngoing 
+                                    ? '<span class="px-2 py-0.5 bg-emerald-300 text-slate-950 font-black text-[9px] rounded-md animate-pulse">جارٍ الآن ⚡</span>' 
+                                    : hasPassed 
+                                        ? '<span class="text-[9px] text-slate-500 font-bold">انتهت الحصة ✓</span>'
+                                        : '<span class="text-[9px] text-slate-400 font-tech">قادمة</span>'
+                            }
+                        </div>
+                        <h4 class="text-xs sm:text-sm font-black text-white truncate">
+                            ${sub ? sub.name : 'مقرر دراسي'}
+                        </h4>
+                        <div class="text-[11px] text-emerald-300 font-tech num-font mt-1">
+                            ⏰ ${slot.startTime} - ${slot.endTime}
+                        </div>
+                        <div class="flex items-center justify-between text-[10px] text-slate-400 pt-2 mt-2 border-t border-white/5">
+                            <span>📍 ${slot.location || 'غير محدد'}</span>
+                            <span>👤 ${slot.instructor || ''}</span>
+                        </div>
+                    </div>
+                `);
+            });
+        }
+
+        function evaluateNextEvent() {
+            const now = new Date();
+            const candidates = [];
+
+            // 1. One-time exams
+            deadlines.forEach(dl => {
+                const target = new Date(dl.datetime);
+                if (target > now) {
+                    const sub = subjects.find(s => s.id === dl.subjectId);
+                    candidates.push({ 
+                        title: `امتحان: ${dl.name} (${sub ? sub.name : ''})`, 
+                        cat: `${dl.category} [مرة واحدة 🎯]`, 
+                        targetDate: target, 
+                        isRecurring: false 
+                    });
+                }
+            });
+
+            // 2. Weekly Recurring Slots
+            scheduleSlots.forEach(slot => {
+                const [hrs, mins] = slot.startTime.split(':').map(Number);
+                const candidate = new Date(now); 
+                candidate.setHours(hrs, mins, 0, 0);
+                let diffDays = (parseInt(slot.dayOfWeek) - now.getDay() + 7) % 7;
+                if (diffDays === 0 && candidate <= now) {
+                    diffDays = 7;
+                }
+                candidate.setDate(candidate.getDate() + diffDays);
+                const sub = subjects.find(s => s.id === slot.subjectId);
+                candidates.push({ 
+                    title: `${slot.type}: ${sub ? sub.name : ''} [${slot.location}]`, 
+                    cat: `تكرار أسبوعي (${dayNamesArabic[slot.dayOfWeek]}) 🔄`, 
+                    targetDate: candidate, 
+                    isRecurring: true 
+                });
+            });
+
+            if (candidates.length === 0) return null;
+            candidates.sort((a,b) => a.targetDate - b.targetDate);
+            return candidates[0];
+        }
+
+        function refreshRadar() {
+            refreshSmartHomeSchedule();
+
+            const next = evaluateNextEvent();
+            if (!next) {
+                document.getElementById('radarEventTitle').innerText = 'لا توجد مواعيد نشطة حالياً';
+                document.getElementById('radarEventDetails').innerText = 'أضيفي حصصاً في جدول الأسبوع أو امتحانات لتشغيل الرادار والعد التنازلي التلقائي.';
+                document.getElementById('cdDays').innerText = '00'; document.getElementById('cdHours').innerText = '00';
+                document.getElementById('cdMins').innerText = '00'; document.getElementById('cdSecs').innerText = '00';
+                return;
+            }
+            const now = new Date();
+            const diff = next.targetDate - now;
+            if (diff <= 0) { 
+                refreshRadar(); 
+                return; 
+            }
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            
+            document.getElementById('radarEventTitle').innerText = next.title;
+            document.getElementById('radarHeaderBadge').innerText = next.cat;
+            
+            const yyyy = next.targetDate.getFullYear();
+            const mm = String(next.targetDate.getMonth() + 1).padStart(2, '0');
+            const dd = String(next.targetDate.getDate()).padStart(2, '0');
+            const timeStr = next.targetDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+            
+            document.getElementById('radarEventDetails').innerText = `الموعد القادم: ${yyyy}/${mm}/${dd} الساعة ${timeStr} - يبدأ قريباً!`;
+            document.getElementById('cdDays').innerText = String(d).padStart(2,'0');
+            document.getElementById('cdHours').innerText = String(h).padStart(2,'0');
+            document.getElementById('cdMins').innerText = String(m).padStart(2,'0');
+            document.getElementById('cdSecs').innerText = String(s).padStart(2,'0');
+        }
+        setInterval(refreshRadar, 1000);
+
+        /* =========================================================================
+           4. SUBJECTS & SECTIONS MATRIX
+           ========================================================================= */
+        function renderSubjectsScreen() {
+            const container = document.getElementById('subjectCardsGrid');
+            if (!container) return; 
+            container.innerHTML = '';
+            let totalN = 0, doneN = 0;
+
+            subjects.forEach(sub => {
+                const subSecs = sections.filter(sec => sec.subjectId === sub.id);
+                let subTot = 0, subDone = 0;
+                const secsHTML = subSecs.map(sec => {
+                    subTot += sec.count; 
+                    subDone += (sec.completedNodes || []).length;
+                    let chips = '';
+                    for (let i = 1; i <= sec.count; i++) {
+                        const isDone = (sec.completedNodes || []).includes(i);
+                        chips += `<div onclick="toggleNode('${sec.id}', ${i})" class="study-node ${isDone ? 'done' : ''}">${i}</div>`;
+                    }
+                    return `
+                        <div class="bg-black/40 border border-white/5 p-3.5 rounded-2xl space-y-2.5">
+                            <div class="flex items-center justify-between text-xs font-bold">
+                                <span class="text-white flex items-center gap-1.5">
+                                    <span class="text-emerald-300 font-tech text-[9px] bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-800/30">${sec.type}</span>
+                                    ${sec.name}
+                                </span>
+                                <div class="flex items-center gap-1">
+                                    <button onclick="editSection('${sec.id}')" class="action-btn px-2.5 py-1 bg-white/5 hover:bg-white/10 text-slate-300 text-[10px] rounded-lg">تعديل</button>
+                                    <button onclick="selectSubtasks('${sec.id}')" class="action-btn px-2.5 py-1 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-[10px] rounded-lg">المهام</button>
+                                    <button onclick="deleteSectionPrompt('${sec.id}')" class="action-btn text-slate-500 hover:text-emerald-300 p-2 text-sm font-bold" title="حذف القسم">✕</button>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-6 sm:grid-cols-8 gap-1.5 pt-1">${chips}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                totalN += subTot; 
+                doneN += subDone;
+                const pct = subTot > 0 ? Math.round((subDone / subTot) * 100) : 0;
+
+                container.insertAdjacentHTML('beforeend', `
+                    <div class="glass-card p-4 sm:p-5 space-y-4 flex flex-col justify-between border-t-2 border-t-emerald-300">
+                        <div class="space-y-3.5">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl p-2 bg-white/5 rounded-2xl">${sub.icon || '🍵'}</span>
+                                    <div>
+                                        <h3 class="text-sm sm:text-base font-black text-white">${sub.name}</h3>
+                                        <span class="text-[10px] text-slate-400 font-tech">التحصيل: <span class="num-font">%${pct}</span> (${subDone}/${subTot})</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <button onclick="editSubject('${sub.id}')" class="action-btn px-2.5 py-1 bg-white/5 hover:bg-white/10 text-slate-300 text-[10px] font-bold rounded-lg">تعديل</button>
+                                    <button onclick="deleteSubjectPrompt('${sub.id}')" class="action-btn text-slate-500 hover:text-emerald-300 p-2 text-base font-black" title="حذف المقرر">✕</button>
+                                </div>
+                            </div>
+                            <div class="space-y-2.5">${secsHTML || '<div class="text-center py-6 text-xs text-slate-400">لا توجد أقسام أو محاضرات مضافة بعد.</div>'}</div>
+                        </div>
+                        <button onclick="openAddSectionModal('${sub.id}')" class="action-btn w-full py-2.5 bg-white/5 hover:bg-emerald-500/10 border border-white/10 text-emerald-300 text-xs font-bold rounded-2xl transition mt-2">+ إضافة قسم / محاضرات</button>
+                    </div>
+                `);
+            });
+
+            const kpiDone = document.getElementById('kpiDoneNodes');
+            if (kpiDone) kpiDone.innerText = doneN;
+            const kpiTot = document.getElementById('kpiTotalProgress');
+            if (kpiTot) kpiTot.innerText = (totalN > 0 ? Math.round((doneN / totalN) * 100) : 0) + '%';
+            const kpiSub = document.getElementById('kpiSubjectCount');
+            if (kpiSub) kpiSub.innerText = `${subjects.length} مواد`;
+            renderSubtasksList();
+        }
+
+        function toggleNode(secId, idx) {
+            const sec = sections.find(s => s.id === secId);
+            if (!sec) return;
+            if (!sec.completedNodes) sec.completedNodes = [];
+            if (sec.completedNodes.includes(idx)) {
+                sec.completedNodes = sec.completedNodes.filter(n => n !== idx);
+                audioEngine.playBeep(340, 'sine', 0.05, 0.03);
+            } else {
+                sec.completedNodes.push(idx);
+                gainExperience(10);
+                recordHeatmap();
+                audioEngine.playBeep(860, 'triangle', 0.1, 0.04);
+            }
+            autoSaveToLocalVault();
+            renderSubjectsScreen();
+        }
+
+        function selectSubtasks(secId) { 
+            currentSelectedSectionId = secId; 
+            renderSubtasksList(); 
+        }
+
+        function renderSubtasksList() {
+            const header = document.getElementById('activeSectionBadge');
+            const container = document.getElementById('subtasksListWrap');
+            const pctEl = document.getElementById('subtaskProgressPercent');
+            if (!currentSelectedSectionId) return;
+            const sec = sections.find(s => s.id === currentSelectedSectionId);
+            if (!sec) return;
+            if (header) header.innerText = sec.name;
+            if (!sec.subtasks) sec.subtasks = [];
+            if (sec.subtasks.length === 0) { 
+                if (container) container.innerHTML = '<div class="text-center py-8 text-slate-400 text-xs">لا توجد مهام فرعية مضافة بعد.</div>'; 
+                if (pctEl) pctEl.innerText = '0%'; 
+                return; 
+            }
+            let done = 0;
+            if (container) {
+                container.innerHTML = sec.subtasks.map(st => {
+                    if (st.done) done++;
+                    return `
+                        <div class="flex items-center justify-between p-3 bg-black/40 border border-white/5 rounded-2xl text-xs">
+                            <label class="flex items-center gap-2.5 cursor-pointer ${st.done ? 'line-through text-slate-500' : 'text-slate-200 font-medium'}">
+                                <input type="checkbox" ${st.done ? 'checked' : ''} onchange="toggleSubtask('${st.id}')" class="rounded accent-emerald-400 p-1 w-4 h-4 cursor-pointer">
+                                <span>${st.text}</span>
+                            </label>
+                            <button onclick="deleteSubtask('${st.id}')" class="action-btn text-slate-500 hover:text-emerald-300 p-2 font-bold" title="حذف المهمة">✕</button>
+                        </div>
+                    `;
+                }).join('');
+            }
+            if (pctEl) pctEl.innerText = Math.round((done / sec.subtasks.length) * 100) + '%';
+        }
+
+        function handleSubtaskSubmit(e) {
+            e.preventDefault();
+            if (!currentSelectedSectionId) return;
+            const sec = sections.find(s => s.id === currentSelectedSectionId);
+            const inp = document.getElementById('subtaskTextInp');
+            if (!sec || !inp || !inp.value.trim()) return;
+            if (!sec.subtasks) sec.subtasks = [];
+            sec.subtasks.push({ id: 'st-' + Date.now(), text: inp.value.trim(), done: false });
+            inp.value = '';
+            gainExperience(5);
+            autoSaveToLocalVault();
+            renderSubtasksList();
+        }
+
+        function toggleSubtask(stId) {
+            const sec = sections.find(s => s.id === currentSelectedSectionId);
+            if (!sec || !sec.subtasks) return;
+            const st = sec.subtasks.find(s => s.id === stId);
+            if (st) {
+                st.done = !st.done;
+                if (st.done) gainExperience(5);
+                autoSaveToLocalVault();
+                renderSubtasksList();
+            }
+        }
+
+        function deleteSubtask(stId) {
+            const sec = sections.find(s => s.id === currentSelectedSectionId);
+            if (sec && sec.subtasks) {
+                sec.subtasks = sec.subtasks.filter(s => s.id !== stId);
+                autoSaveToLocalVault();
+                renderSubtasksList();
+            }
+        }
+
+        /* =========================================================================
+           5. WEEKLY RECURRING SCHEDULE
+           ========================================================================= */
+        function filterScheduleDay(d) {
+            currentActiveScheduleDay = d;
+            [6, 0, 1, 2, 3, 4, 5, 'all'].forEach(day => {
+                const btn = document.getElementById(`schDayTab-${day}`);
+                if (btn) {
+                    btn.className = (day === d) 
+                        ? 'action-btn px-4 py-2 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex-shrink-0' 
+                        : 'action-btn px-4 py-2 rounded-2xl bg-black/40 border border-white/10 text-slate-400 font-bold text-xs flex-shrink-0';
+                }
+            });
+            renderScheduleScreen();
+        }
+
+        function renderScheduleScreen() {
+            const container = document.getElementById('scheduleSlotsListWrap'); 
+            if (!container) return; 
+            container.innerHTML = '';
+            const now = new Date();
+            const curDay = now.getDay();
+            const curTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+            
+            let slots = scheduleSlots; 
+            if (currentActiveScheduleDay !== 'all') {
+                slots = scheduleSlots.filter(s => parseInt(s.dayOfWeek) === parseInt(currentActiveScheduleDay));
+            }
+            
+            if (slots.length === 0) { 
+                container.innerHTML = '<div class="col-span-full glass-card p-8 text-center text-xs text-slate-400">لا توجد حصص مجدولة في هذا اليوم. يمكنكِ إضافة حصة أسبوعية متكررة أعلاه.</div>'; 
+                return; 
+            }
+            
+            slots.sort((a, b) => (a.startTime || '').localeCompare(b.startTime || ''));
+            
+            slots.forEach(s => {
+                const sub = subjects.find(sb => sb.id === s.subjectId);
+                const isToday = (parseInt(s.dayOfWeek) === curDay);
+                const isActive = isToday && s.startTime && s.endTime && (curTime >= s.startTime && curTime <= s.endTime);
+                
+                container.insertAdjacentHTML('beforeend', `
+                    <div class="glass-card p-4 space-y-2.5 relative border transition-all ${isActive ? 'border-emerald-300 shadow-[0_0_20px_rgba(110,231,183,0.3)] bg-emerald-950/40' : 'border-white/10 bg-black/40'}">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[9px] font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-800/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <span>🔄 تكرار أسبوعي كل ${dayNamesArabic[s.dayOfWeek] || ''}</span>
+                            </span>
+                            ${isActive ? '<span class="px-2 py-0.5 bg-emerald-300 text-slate-950 font-black text-[9px] rounded-md animate-pulse">جارٍ الآن ⚡</span>' : ''}
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-black">
+                            <span class="text-white text-sm">${s.type}: <span class="text-emerald-300">${sub ? sub.name : ''}</span></span>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="editScheduleSlot('${s.id}')" class="action-btn px-2.5 py-1 bg-white/5 hover:bg-white/10 text-slate-300 rounded-lg text-[10px]">تعديل</button>
+                                <button onclick="deleteSchedulePrompt('${s.id}')" class="action-btn text-slate-500 hover:text-emerald-300 p-2 font-bold text-sm" title="حذف الحصة">✕</button>
+                            </div>
+                        </div>
+                        <div class="text-xs text-slate-200 font-tech num-font">⏰ ${s.startTime} - ${s.endTime}</div>
+                        <div class="text-[11px] text-slate-400 flex justify-between border-t border-white/5 pt-2">
+                            <span>📍 ${s.location || 'غير محدد'}</span>
+                            <span>👤 ${s.instructor || ''}</span>
+                        </div>
+                    </div>
+                `);
+            });
+        }
+
+        /* =========================================================================
+           6. BOSS RAIDS (ONE-TIME EXAMS)
+           ========================================================================= */
+        function renderBossRaids() {
+            const container = document.getElementById('bossRaidsGridWrap'); 
+            if (!container) return; 
+            container.innerHTML = '';
+            
+            if (deadlines.length === 0) { 
+                container.innerHTML = '<div class="col-span-full glass-card p-10 text-center text-xs text-slate-400">لا توجد امتحانات أو غارات زعماء مضافة حالياً. انقري (+ إضافة امتحان / زعيم) لجدولة أول اختبار!</div>'; 
+                return; 
+            }
+            
+            const now = new Date();
+            deadlines.forEach(dl => {
+                const sub = subjects.find(s => s.id === dl.subjectId);
+                const start = new Date(dl.datetime || dl.startDateTime || Date.now());
+                const end = dl.endDatetime ? new Date(dl.endDatetime) : new Date(start.getTime() + 60 * 60 * 1000);
+                const isPassed = end < now;
+                const diff = start - now;
+                
+                // Automatic HP Calculation: Starts 100% Full and depletes smoothly to 0% at exam time
+                const creationTime = dl.createdAt || (start.getTime() - 7 * 24 * 60 * 60 * 1000);
+                const totalSpan = Math.max(1000, start.getTime() - creationTime);
+                const timeRemainingRatio = Math.max(0, Math.min(1, (start.getTime() - now.getTime()) / totalSpan));
+                
+                let hp = 100;
+                if (isPassed) {
+                    hp = 0;
+                } else if (diff <= 0) {
+                    hp = 5; // Exam currently in progress
+                } else {
+                    hp = Math.max(1, Math.min(100, Math.round(timeRemainingRatio * 100)));
+                }
+                
+                const yyyy = start.getFullYear();
+                const mm = String(start.getMonth() + 1).padStart(2, '0');
+                const dd = String(start.getDate()).padStart(2, '0');
+                const startLabel = start.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+                const endLabel = end.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+                
+                let remText = '';
+                if (isPassed) {
+                    remText = '<span class="text-slate-500 font-bold">🏁 انتهى الامتحان (مرة واحدة)</span>';
+                } else if (diff <= 0) {
+                    remText = '<span class="text-emerald-300 font-black animate-pulse">⚡ الامتحان جارٍ الآن!</span>';
+                } else {
+                    const dRem = Math.floor(diff / 86400000);
+                    const hRem = Math.floor((diff % 86400000) / 3600000);
+                    const mRem = Math.floor((diff % 3600000) / 60000);
+                    remText = `<span class="text-emerald-300 font-bold num-font">${dRem}d ${hRem}h ${mRem}m متبقي</span>`;
+                }
+
+                container.insertAdjacentHTML('beforeend', `
+                    <div class="glass-card p-5 space-y-4 border-t-2 ${isPassed ? 'border-t-slate-700 opacity-75' : 'border-t-emerald-300'}">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[9px] font-tech font-black text-emerald-300 bg-emerald-950/60 px-3 py-1 rounded-full uppercase border border-emerald-800/30">BOSS // ${dl.category}</span>
+                                <span class="text-[9px] text-amber-200 bg-amber-950/60 border border-amber-800/30 px-2 py-0.5 rounded-full font-bold">مرة واحدة 🎯</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="editDeadline('${dl.id}')" class="action-btn px-2.5 py-1 bg-white/5 text-slate-300 rounded-lg text-[10px]">تعديل</button>
+                                <button onclick="deleteDeadlinePrompt('${dl.id}')" class="action-btn text-slate-500 hover:text-emerald-300 p-2 font-black text-base" title="حذف الامتحان">✕</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-sm sm:text-base font-black text-white">${dl.name}</h3>
+                            <span class="text-xs text-slate-400 font-bold">${sub ? sub.name : ''}</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs flex-wrap">
+                            <span class="text-amber-200 font-tech num-font bg-amber-950/40 border border-amber-500/20 rounded-xl px-2.5 py-1">📅 ${yyyy}/${mm}/${dd}</span>
+                            <span class="text-emerald-300 font-tech num-font bg-emerald-950/40 border border-emerald-500/20 rounded-xl px-2.5 py-1">⏰ ${startLabel} - ${endLabel}</span>
+                        </div>
+                        
+                        <!-- Smooth Boss HP Track (Botanical Mint & Chamomile, zero red) -->
+                        <div class="space-y-1.5 pt-1">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-slate-300 font-bold text-[11px]">طاقة الزعيم والوقت المتبقي (Boss HP Gauge)</span>
+                                <span class="text-emerald-300 font-tech font-black text-sm num-font">${hp}% HP</span>
+                            </div>
+                            
+                            <div class="boss-hp-track">
+                                <div class="boss-hp-bar" style="width: ${hp}%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2.5 border-t border-white/5 flex items-center justify-between text-xs text-slate-400"><span>حالة الموعد:</span>${remText}</div>
+                    </div>
+                `);
+            });
+        }
+
+        /* =========================================================================
+           7. GPA SUITE ACCORDING TO OFFICIAL FACULTY REGULATION
+           ========================================================================= */
+        function calculateOfficialGrade(score, max = 100) {
+            const numScore = parseFloat(score) || 0;
+            const numMax = parseFloat(max) || 100;
+            const r = numMax > 0 ? (numScore / numMax) * 100 : 0;
+            
+            // Strictly below 60% is Fail (F) and 0.0 points as per official faculty regulation
+            if (numScore <= 0 || r < 60) {
+                return { letter: 'F', pts: 0.0, passed: false };
+            }
+            if (r >= 95) return { letter: '+A', pts: 4.0, passed: true };
+            if (r >= 90) return { letter: 'A', pts: 3.7, passed: true };
+            if (r >= 85) return { letter: '+B', pts: 3.3, passed: true };
+            if (r >= 80) return { letter: 'B', pts: 3.0, passed: true };
+            if (r >= 75) return { letter: '+C', pts: 2.7, passed: true };
+            if (r >= 70) return { letter: 'C', pts: 2.4, passed: true };
+            if (r >= 65) return { letter: '+D', pts: 2.1, passed: true };
+            if (r >= 60) return { letter: 'D', pts: 1.8, passed: true };
+            return { letter: 'F', pts: 0.0, passed: false };
+        }
+
+        function getOverallEvaluation(gpaVal) {
+            if (gpaVal >= 3.4) return { text: 'ممتاز 🌟', color: 'text-emerald-300' };
+            if (gpaVal >= 2.8) return { text: 'جيد جداً 🍵', color: 'text-teal-300' };
+            if (gpaVal >= 2.4) return { text: 'جيد 👍', color: 'text-lime-300' };
+            if (gpaVal >= 2.0) return { text: 'مقبول ⚡', color: 'text-amber-300' };
+            if (gpaVal >= 1.4) return { text: 'ضعيف (إنذار أكاديمي) ⚠️', color: 'text-stone-300' };
+            return { text: 'ضعيف جداً ⚠️', color: 'text-stone-400' };
+        }
+
+        function calculateComprehensiveGpa() {
+            renderGpaTable();
+        }
+
+        function renderGpaTable() {
+            const tbody = document.getElementById('hubGpaTableBody'); 
+            if (!tbody) return; 
+            tbody.innerHTML = '';
+
+            let semesterPointsSum = 0;
+            let semesterHoursSum = 0;
+
+            if (gpaCourses.length === 0) { 
+                tbody.innerHTML = '<tr><td colspan="9" class="text-center py-8 text-slate-400 text-xs">لا توجد مقررات مضافة بعد. انقري (+ إضافة مقرر دراسي) للبدء!</td></tr>'; 
+            } else {
+                gpaCourses.forEach((c, idx) => {
+                    const { letter, pts, passed } = calculateOfficialGrade(c.myScore, c.maxScore);
+                    const hoursNum = parseFloat(c.hours) || 0;
+                    if (hoursNum > 0) { 
+                        semesterPointsSum += (pts * hoursNum); 
+                        semesterHoursSum += hoursNum; 
+                    }
+                    const scoreNum = parseFloat(c.myScore) || 0;
+                    const maxNum = parseFloat(c.maxScore) || 100;
+                    const ratio = maxNum > 0 ? Math.round((scoreNum / maxNum) * 100) : 0;
+                    
+                    tbody.insertAdjacentHTML('beforeend', `
+                        <tr class="hover:bg-white/[0.03] transition-colors">
+                            <td class="py-3 px-4 text-right align-middle">
+                                <input type="text" value="${c.name || ''}" onchange="updateGpaVal(${idx}, 'name', this.value)" class="bg-transparent font-bold text-white outline-none w-full border-b border-transparent focus:border-emerald-300 text-xs transition">
+                            </td>
+                            <td class="py-3 px-2 text-center align-middle">
+                                <input type="text" inputmode="numeric" value="${hoursNum}" onchange="updateGpaVal(${idx}, 'hours', parseFloat(this.value)||0)" class="gpa-input-box bg-black/50 border border-white/10 focus:border-emerald-300 rounded-xl px-2 py-1.5 w-14 text-center font-tech text-xs text-slate-200 outline-none num-font">
+                            </td>
+                            <td class="py-3 px-2 text-center align-middle">
+                                <input type="text" inputmode="numeric" value="${scoreNum}" onchange="updateGpaVal(${idx}, 'myScore', parseFloat(this.value)||0)" class="gpa-input-box bg-black/50 border border-emerald-400/40 focus:border-emerald-300 text-emerald-300 font-bold rounded-xl px-2 py-1.5 w-16 text-center font-tech text-xs outline-none num-font">
+                            </td>
+                            <td class="py-3 px-2 text-center align-middle font-tech text-slate-400 text-xs num-font">${maxNum}</td>
+                            <td class="py-3 px-2 text-center align-middle font-tech text-slate-300 text-xs num-font">${ratio}%</td>
+                            <td class="py-3 px-2 text-center align-middle font-tech font-black ${passed ? 'text-emerald-300' : 'text-stone-300'} text-sm num-font">${letter}</td>
+                            <td class="py-3 px-2 text-center align-middle font-tech font-bold ${passed ? 'text-emerald-300' : 'text-stone-400'} text-xs num-font">${pts.toFixed(1)}</td>
+                            <td class="py-3 px-3 text-center align-middle">
+                                <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[10px] font-bold ${passed ? 'bg-emerald-950/80 text-emerald-300 border border-emerald-800/40' : 'bg-stone-900/80 text-stone-300 border border-stone-700/40'}">
+                                    ${passed ? '✓ ناجح' : '✕ راسب (F)'}
+                                </span>
+                            </td>
+                            <td class="py-3 px-2 text-center align-middle">
+                                <button onclick="deleteGpaPrompt(${idx})" class="w-8 h-8 rounded-xl bg-white/5 hover:bg-emerald-500/20 text-slate-400 hover:text-emerald-300 inline-flex items-center justify-center transition transform active:scale-95" title="حذف المقرر">
+                                    <svg class="svg-icon w-4 h-4" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                </button>
+                            </td>
+                        </tr>
+                    `);
+                });
+            }
+
+            // Semester GPA
+            const semesterGpa = semesterHoursSum > 0 ? (semesterPointsSum / semesterHoursSum) : 0;
+            const hubGpaEl = document.getElementById('hubGpaVal');
+            if (hubGpaEl) hubGpaEl.innerText = semesterGpa.toFixed(2);
+            const kpiGpaEl = document.getElementById('kpiGpaVal');
+            if (kpiGpaEl) kpiGpaEl.innerText = semesterGpa.toFixed(2);
+
+            // Previous Cumulative Inputs
+            const prevH = parseFloat(document.getElementById('prevCumHoursInp')?.value) || 0;
+            const prevG = parseFloat(document.getElementById('prevCumGpaInp')?.value) || 0.0;
+            prevCumHours = prevH;
+            prevCumGpa = prevG;
+            autoSaveToLocalVault();
+
+            // Total Comprehensive (Cumulative) Calculation
+            const prevPointsSum = prevH * prevG;
+            const totalHoursAll = prevH + semesterHoursSum;
+            const totalPointsAll = prevPointsSum + semesterPointsSum;
+            const comprehensiveGpa = totalHoursAll > 0 ? (totalPointsAll / totalHoursAll) : semesterGpa;
+
+            const hubCompEl = document.getElementById('hubComprehensiveGpaVal');
+            if (hubCompEl) hubCompEl.innerText = comprehensiveGpa.toFixed(2);
+            const kpiCumEl = document.getElementById('kpiCumGpaVal');
+            if (kpiCumEl) kpiCumEl.innerText = comprehensiveGpa.toFixed(2);
+            const hubHoursEl = document.getElementById('hubGpaTotalAllHoursVal');
+            if (hubHoursEl) hubHoursEl.innerText = totalHoursAll;
+
+            const evalRes = getOverallEvaluation(comprehensiveGpa);
+            const gradeSummaryEl = document.getElementById('hubGpaGradeSummary');
+            if (gradeSummaryEl) {
+                gradeSummaryEl.innerText = evalRes.text;
+                gradeSummaryEl.className = `text-xs sm:text-sm font-black block pt-1.5 ${evalRes.color}`;
+            }
+
+            // Warning Badge (إنذار أكاديمي للمعدل الأقل من 2)
+            const warnBadge = document.getElementById('gpaWarningBadge');
+            if (warnBadge) {
+                if (totalHoursAll > 0 && comprehensiveGpa < 2.0) {
+                    warnBadge.innerText = '⚠️ تنبيه: معدلكِ أقل من 2.0 نقطة (إنذار أكاديمي)';
+                    warnBadge.className = 'text-xs font-black text-amber-300 font-tech animate-pulse';
+                } else {
+                    warnBadge.innerText = 'وضع أكاديمي ممتاز وصحي ✓';
+                    warnBadge.className = 'text-xs font-black text-emerald-400 font-tech';
+                }
+            }
+        }
+
+        function updateGpaVal(idx, key, val) { 
+            if (gpaCourses[idx]) { 
+                gpaCourses[idx][key] = val; 
+                autoSaveToLocalVault(); 
+                renderGpaTable(); 
+            } 
+        }
+        function addNewGpaCourseRow() { 
+            gpaCourses.push({ id: 'gpa-'+Date.now(), name: 'مقرر دراسي جديد', hours: 3, myScore: 0, maxScore: 100 }); 
+            autoSaveToLocalVault(); 
+            renderGpaTable(); 
+            showToast('✓ تمت إضافة المقرر بنجاح'); 
+        }
+        function deleteGpaPrompt(idx) { 
+            openConfirm('حذف مقرر', 'هل تريدين حذف هذا المقرر من حاسبة المعدل؟', () => { 
+                gpaCourses.splice(idx, 1); 
+                autoSaveToLocalVault(); 
+                renderGpaTable(); 
+            }); 
+        }
+
+        /* =========================================================================
+           8. HEATMAP & POMODORO & MODAL LOGIC
+           ========================================================================= */
+        function renderHeatmap() {
+            const c = document.getElementById('heatmapGridContainer'); 
+            if (!c) return; 
+            c.innerHTML = '';
+            const today = new Date();
+            for (let i = 97; i >= 0; i--) {
+                const dt = new Date(); dt.setDate(today.getDate() - i);
+                const key = dt.toISOString().split('T')[0], cnt = studyHeatmap[key] || 0;
+                let color = 'bg-white/5';
+                if (cnt >= 4) color = 'bg-emerald-300 shadow-[0_0_8px_rgba(110,231,183,0.6)]'; 
+                else if (cnt >= 2) color = 'bg-emerald-600'; 
+                else if (cnt === 1) color = 'bg-emerald-950';
+                c.insertAdjacentHTML('beforeend', `<div class="w-3.5 h-3.5 rounded-sm ${color} cursor-pointer transition transform hover:scale-125" title="${key}: ${cnt} إنجازات"></div>`);
+            }
+        }
+        function recordHeatmap() {
+            const today = new Date().toISOString().split('T')[0];
+            studyHeatmap[today] = (studyHeatmap[today] || 0) + 1;
+            renderHeatmap(); 
+            autoSaveToLocalVault();
+        }
+
+        /* Pomodoro Engine */
+        function setPomoPreset(mode, mins) {
+            if (pomoIsActive) togglePomoTimer();
+            pomoCurrentMode = mode; pomoMins = mins; pomoSecs = 0; pomoTotalSecs = mins * 60;
+            ['focus', 'deep', 'short'].forEach(m => {
+                const b = document.getElementById(`pomoBtn-${m}`);
+                if (b) b.className = (m === mode) ? 'flex-grow py-1.5 px-3 text-xs font-bold rounded-xl transition bg-emerald-400/20 text-emerald-300' : 'flex-grow py-1.5 px-3 text-xs font-bold rounded-xl transition text-slate-400 hover:text-white';
+            });
+            refreshPomoDisplay();
+        }
+        function togglePomoTimer() {
+            pomoIsActive = !pomoIsActive; const btn = document.getElementById('pomoTriggerBtn');
+            if (pomoIsActive) {
+                btn.innerText = 'إيقاف مؤقت ⏸️';
+                pomoTimerObj = setInterval(() => {
+                    if (pomoSecs > 0) pomoSecs--; 
+                    else if (pomoMins > 0) { pomoMins--; pomoSecs = 59; } 
+                    else {
+                        clearInterval(pomoTimerObj); pomoIsActive = false; btn.innerText = 'بدء الجلسة 🍵';
+                        audioEngine.playChime(); triggerConfetti(); gainExperience(30); recordHeatmap(); showToast('🎉 أنهيتِ جلسة التركيز بنجاح عظيم!'); return;
+                    }
+                    refreshPomoDisplay();
+                }, 1000);
+            } else { 
+                clearInterval(pomoTimerObj); 
+                btn.innerText = 'متابعة الجلسة ▶️'; 
+            }
+        }
+        function refreshPomoDisplay() {
+            document.getElementById('pomoMinsVal').innerText = String(pomoMins).padStart(2,'0');
+            document.getElementById('pomoSecsVal').innerText = String(pomoSecs).padStart(2,'0');
+            const ratio = pomoTotalSecs > 0 ? ((pomoMins*60 + pomoSecs) / pomoTotalSecs) : 0;
+            const ring = document.getElementById('pomoDialRing');
+            if (ring) ring.style.strokeDashoffset = 427.25 * (1 - ratio);
+        }
+        function openPomoEditModal() { 
+            if (pomoIsActive) togglePomoTimer(); 
+            document.getElementById('editPomoMinsInp').value = pomoMins; 
+            document.getElementById('editPomoSecsInp').value = pomoSecs; 
+            openModal('modalPomoEdit'); 
+        }
+        function adjustEditPomoMins(d) { const i = document.getElementById('editPomoMinsInp'); i.value = Math.max(1, Math.min(180, (parseInt(i.value)||25)+d)); }
+        function adjustEditPomoSecs(d) { const i = document.getElementById('editPomoSecsInp'); i.value = Math.max(0, Math.min(59, (parseInt(i.value)||0)+d)); }
+        function saveCustomPomoTime() {
+            pomoMins = Math.max(1, parseInt(document.getElementById('editPomoMinsInp').value)||25);
+            pomoSecs = Math.max(0, parseInt(document.getElementById('editPomoSecsInp').value)||0);
+            pomoTotalSecs = pomoMins * 60 + pomoSecs; refreshPomoDisplay(); closeModal('modalPomoEdit'); showToast('✓ تم ضبط وقت المؤقت');
+        }
+
+        /* Ambient Synth Controls */
+        function updateTrackVolume(ch, val) { audioEngine.setTrackVol(ch, val); document.getElementById(`synthLevel-${ch}`).innerText = val + '%'; }
+        function stopAllSynthTracks() { ['gamma','rain','waves','fire'].forEach(ch => { updateTrackVolume(ch, 0); const s = document.getElementById(`synthTrack-${ch}`); if(s) s.value='0'; }); }
+        function toggleMasterSound() { const m = audioEngine.toggleMuteAll(); showToast(m ? '🔇 تم كتم جميع الأصوات' : '🔊 تم تشغيل الأصوات التناظرية'); }
+        function saveBrainDumpLocal() { autoSaveToLocalVault(); }
+        function clearBrainDumpLocal() { openConfirm('مسح المسودة', 'هل تريدين مسح مفكرة التفريغ الذهني بالكامل؟', () => { document.getElementById('brainDumpArea').value = ''; autoSaveToLocalVault(); }); }
+
+        /* Modal Dialog Handlers */
+        function openModal(id) { const el = document.getElementById(id); if (el) { el.classList.remove('hidden'); setTimeout(()=>el.classList.remove('opacity-0'),10); } }
+        function closeModal(id) { const el = document.getElementById(id); if (el) { el.classList.add('opacity-0'); setTimeout(()=>el.classList.add('hidden'),200); } }
+        function closeModalSheet(id) { closeModal(id); }
+        function openQuickActionSheet() { openModal('sheetQuickAction'); }
+        function openConfirm(title, msg, fn) { document.getElementById('confirmTitle').innerText = title; document.getElementById('confirmMessage').innerText = msg; pendingConfirmFn = fn; openModal('modalConfirm'); }
+        function executeConfirmedAction() { if (pendingConfirmFn) pendingConfirmFn(); closeModal('modalConfirm'); pendingConfirmFn = null; }
+
+        /* CRUD Logic */
+        function openSubjectModal() { document.getElementById('subEditId').value=''; document.getElementById('modalSubjectTitle').innerText='إضافة مقرر دراسي جديد'; document.getElementById('subNameInp').value=''; populateIcons(); openModal('modalSubject'); }
+        function populateIcons() {
+            const g = document.getElementById('subIconPickerGrid'); if(!g) return;
+            g.innerHTML = ['💻','📐','🍵','🔬','🧠','🗄️','📊','📚','🤖','🧪','🎨','🚀','🛠️','⚖️','🛰️','💡'].map(i => `<button type="button" onclick="document.getElementById('subIconInp').value='${i}'; showToast('تم اختيار ${i}')" class="action-btn p-2 text-base rounded-xl hover:bg-white/10">${i}</button>`).join('');
+        }
+        function editSubject(id) { const s = subjects.find(x=>x.id===id); if(!s) return; document.getElementById('subEditId').value=s.id; document.getElementById('modalSubjectTitle').innerText='تعديل المقرر الدراسي'; document.getElementById('subNameInp').value=s.name; document.getElementById('subIconInp').value=s.icon||'🍵'; populateIcons(); openModal('modalSubject'); }
+        function handleSubjectSubmit(e) {
+            e.preventDefault(); const id = document.getElementById('subEditId').value, name = document.getElementById('subNameInp').value.trim(), icon = document.getElementById('subIconInp').value||'🍵';
+            if(id) { const s = subjects.find(x=>x.id===id); if(s){ s.name=name; s.icon=icon; } } else { subjects.push({ id:'sub-'+Date.now(), name, icon, createdAt:Date.now() }); gainExperience(20); }
+            autoSaveToLocalVault(); closeModal('modalSubject'); renderSubjectsScreen(); populateSelects(); showToast('✓ تم حفظ المقرر بنجاح');
+        }
+        function deleteSubjectPrompt(id) { openConfirm('حذف المقرر', 'هل تريدين حذف المقرر وكافة أقسامه ومواعيده؟', () => { subjects=subjects.filter(s=>s.id!==id); sections=sections.filter(s=>s.subjectId!==id); scheduleSlots=scheduleSlots.filter(s=>s.subjectId!==id); deadlines=deadlines.filter(d=>d.subjectId!==id); autoSaveToLocalVault(); renderSubjectsScreen(); renderScheduleScreen(); renderBossRaids(); populateSelects(); refreshRadar(); }); }
+
+        function openAddSectionModal(subId) { document.getElementById('secParentSubId').value=subId; document.getElementById('secEditId').value=''; document.getElementById('modalSectionTitle').innerText='إضافة قسم دراسي'; document.getElementById('secNameInp').value=''; document.getElementById('secCountInp').value='8'; openModal('modalSection'); }
+        function editSection(secId) { const sec = sections.find(s=>s.id===secId); if(!sec) return; document.getElementById('secParentSubId').value=sec.subjectId; document.getElementById('secEditId').value=sec.id; document.getElementById('modalSectionTitle').innerText='تعديل القسم'; document.getElementById('secNameInp').value=sec.name; document.getElementById('secTypeSelect').value=sec.type; document.getElementById('secCountInp').value=sec.count; openModal('modalSection'); }
+        function handleSectionSubmit(e) {
+            e.preventDefault(); const subId = document.getElementById('secParentSubId').value, editId = document.getElementById('secEditId').value, name = document.getElementById('secNameInp').value.trim(), type = document.getElementById('secTypeSelect').value, count = parseInt(document.getElementById('secCountInp').value)||8;
+            if(editId) { const sec = sections.find(s=>s.id===editId); if(sec){ sec.name=name; sec.type=type; sec.count=count; } } else { sections.push({ id:'sec-'+Date.now(), subjectId:subId, type, name, count, completedNodes:[], subtasks:[], createdAt:Date.now() }); gainExperience(10); }
+            autoSaveToLocalVault(); closeModal('modalSection'); renderSubjectsScreen(); showToast('✓ تم حفظ القسم');
+        }
+        function deleteSectionPrompt(secId) { openConfirm('حذف القسم', 'هل تريدين حذف هذا القسم؟', () => { sections=sections.filter(s=>s.id!==secId); autoSaveToLocalVault(); renderSubjectsScreen(); }); }
+
+        function populateSelects() {
+            const opts = subjects.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+            const s = document.getElementById('schSubSelect'), d = document.getElementById('deadSubSelect');
+            if(s) s.innerHTML = opts; if(d) d.innerHTML = opts;
+        }
+        function openScheduleModal() { populateSelects(); document.getElementById('schEditId').value=''; openModal('modalSchedule'); }
+        function editScheduleSlot(id) { const slot = scheduleSlots.find(s=>s.id===id); if(!slot) return; populateSelects(); document.getElementById('schEditId').value=slot.id; document.getElementById('schDaySelect').value=slot.dayOfWeek; document.getElementById('schTypeSelect').value=slot.type; document.getElementById('schSubSelect').value=slot.subjectId; document.getElementById('schStartInp').value=slot.startTime||'09:00'; document.getElementById('schEndInp').value=slot.endTime||'11:00'; document.getElementById('schLocInp').value=slot.location||''; document.getElementById('schInstInp').value=slot.instructor||''; openModal('modalSchedule'); }
+        function handleScheduleSubmit(e) {
+            e.preventDefault(); const id = document.getElementById('schEditId').value, dayOfWeek = parseInt(document.getElementById('schDaySelect').value), type = document.getElementById('schTypeSelect').value, subjectId = document.getElementById('schSubSelect').value, startTime = document.getElementById('schStartInp').value, endTime = document.getElementById('schEndInp').value, location = document.getElementById('schLocInp').value.trim(), instructor = document.getElementById('schInstInp').value.trim();
+            if(id) { const slot = scheduleSlots.find(s=>s.id===id); if(slot) { slot.dayOfWeek=dayOfWeek; slot.type=type; slot.subjectId=subjectId; slot.startTime=startTime; slot.endTime=endTime; slot.location=location; slot.instructor=instructor; } } else { scheduleSlots.push({ id:'sch-'+Date.now(), dayOfWeek, type, subjectId, startTime, endTime, location, instructor }); gainExperience(10); }
+            autoSaveToLocalVault(); closeModal('modalSchedule'); renderScheduleScreen(); refreshRadar(); showToast('✓ تم حفظ الحصة بالجدول الأسبوعي');
+        }
+        function deleteSchedulePrompt(id) { openConfirm('حذف الحصة', 'هل تريدين حذف هذه الحصة؟', () => { scheduleSlots=scheduleSlots.filter(s=>s.id!==id); autoSaveToLocalVault(); renderScheduleScreen(); refreshRadar(); }); }
+
+        function openDeadlineModal() { populateSelects(); document.getElementById('deadEditId').value=''; document.getElementById('deadDateInp').value=''; document.getElementById('deadStartTimeInp').value='09:00'; document.getElementById('deadEndTimeInp').value='11:00'; openModal('modalDeadline'); }
+        function editDeadline(id) { const dl = deadlines.find(d=>d.id===id); if(!dl) return; populateSelects(); document.getElementById('deadEditId').value=dl.id; document.getElementById('deadNameInp').value=dl.name; document.getElementById('deadCatSelect').value=dl.category; document.getElementById('deadSubSelect').value=dl.subjectId; const start = new Date(dl.datetime || dl.startDateTime || Date.now()); const end = dl.endDatetime ? new Date(dl.endDatetime) : new Date(start.getTime() + 90*60*1000); const dt = new Date(start.getTime() - start.getTimezoneOffset()*60000); document.getElementById('deadDateInp').value=dt.toISOString().slice(0,10); document.getElementById('deadStartTimeInp').value=start.toTimeString().slice(0,5); document.getElementById('deadEndTimeInp').value=end.toTimeString().slice(0,5); openModal('modalDeadline'); }
+        function handleDeadlineSubmit(e) {
+            e.preventDefault(); const id = document.getElementById('deadEditId').value, name = document.getElementById('deadNameInp').value.trim(), category = document.getElementById('deadCatSelect').value, subjectId = document.getElementById('deadSubSelect').value, dateValue = document.getElementById('deadDateInp').value, startTime = document.getElementById('deadStartTimeInp').value, endTime = document.getElementById('deadEndTimeInp').value;
+            if (!dateValue || !startTime || !endTime) return;
+            const startDate = new Date(`${dateValue}T${startTime}:00`);
+            let endDate = new Date(`${dateValue}T${endTime}:00`);
+            if (endDate <= startDate) endDate = new Date(startDate.getTime() + 60*60*1000);
+            const payload = { id: id || 'dl-'+Date.now(), name, category, subjectId, datetime: startDate.toISOString(), endDatetime: endDate.toISOString(), createdAt: Date.now() };
+            if(id) { const dl = deadlines.find(d=>d.id===id); if(dl){ dl.name=name; dl.category=category; dl.subjectId=subjectId; dl.datetime=payload.datetime; dl.endDatetime=payload.endDatetime; } } else { deadlines.push(payload); gainExperience(15); }
+            autoSaveToLocalVault(); closeModal('modalDeadline'); renderBossRaids(); refreshRadar(); showToast('✓ تم حفظ الامتحان بنجاح');
+        }
+        function deleteDeadlinePrompt(id) { openConfirm('حذف الامتحان', 'هل تريدين حذف هذا الامتحان؟', () => { deadlines=deadlines.filter(d=>d.id!==id); autoSaveToLocalVault(); renderBossRaids(); refreshRadar(); }); }
+
+        /* Backup & Restore JSON Vault */
+        function openDataVaultModal() { openModal('sheetDataVault'); }
+        function downloadJsonVault() {
+            const blob = new Blob([localStorage.getItem(APP_STORAGE_KEY)||'{}'], {type:'application/json'});
+            const a = document.createElement('a'); 
+            a.href = URL.createObjectURL(blob); 
+            a.download = `Aetheris_Academia_Matcha_Backup_${new Date().toISOString().split('T')[0]}.json`; 
+            a.click();
+            showToast('✓ تم تنزيل النسخة الاحتياطية بنجاح');
+        }
+        function importJsonVault(e) {
+            const f = e.target.files[0]; if(!f) return; 
+            const r = new FileReader();
+            r.onload = function(evt) {
+                try {
+                    const p = JSON.parse(evt.target.result);
+                    if (p.subjects || p.gpaCourses) { 
+                        localStorage.setItem(APP_STORAGE_KEY, JSON.stringify(p)); 
+                        loadFromLocalVault(); 
+                        renderSubjectsScreen(); 
+                        renderScheduleScreen(); 
+                        renderBossRaids(); 
+                        renderGpaTable(); 
+                        renderHeatmap(); 
+                        refreshRadar(); 
+                        closeModal('sheetDataVault'); 
+                        showToast('🎉 تم استيراد بياناتك بنجاح!'); 
+                    }
+                } catch(e) { showToast('❌ ملف النسخة غير صالح'); }
+            };
+            r.readAsText(f);
+        }
+
+        /* Ambient Botanical Particle Canvas */
+        function initMeshCanvas() {
+            const c = document.getElementById('bgCanvasMesh'); if(!c) return; const ctx = c.getContext('2d');
+            let w = c.width = window.innerWidth, h = c.height = window.innerHeight;
+            const count = window.innerWidth < 768 ? 14 : 24;
+            const nodes = Array.from({length: count}, () => ({
+                x: Math.random()*w, y: Math.random()*h, 
+                vx: (Math.random()-0.5)*0.16, vy: (Math.random()-0.5)*0.16, 
+                r: Math.random()*1.3 + 0.5,
+                color: ['rgba(110,231,183,0.18)', 'rgba(167,243,208,0.15)', 'rgba(134,239,172,0.13)'][Math.floor(Math.random()*3)]
+            }));
+            
+            window.addEventListener('resize', () => { 
+                if (!c) return;
+                w = c.width = window.innerWidth; 
+                h = c.height = window.innerHeight; 
+            }, { passive: true });
+            
+            function loop() {
+                ctx.clearRect(0,0,w,h);
+                for (let i = 0; i < nodes.length; i++) {
+                    const n = nodes[i];
+                    n.x += n.vx; n.y += n.vy; 
+                    if(n.x<0||n.x>w) n.vx*=-1; 
+                    if(n.y<0||n.y>h) n.vy*=-1;
+                    ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI*2); ctx.fillStyle=n.color; ctx.fill();
+                }
+                requestAnimationFrame(loop);
+            }
+            loop();
+        }
+
+        /* Celebration FX */
+        let confettiList = [];
+        function triggerConfetti() {
+            const c = document.getElementById('fxConfettiCanvas'); if(!c) return; c.width = window.innerWidth; c.height = window.innerHeight;
+            for(let i=0; i<45; i++) confettiList.push({
+                x: c.width/2, y: c.height/2, 
+                vx: (Math.random()-0.5)*12, vy: (Math.random()-0.5)*12, 
+                size: Math.random()*3+2, 
+                color: ['#6ee7b7','#a7f3d0','#86efac','#fde68a','#34d399'][Math.floor(Math.random()*5)], 
+                life: 1
+            });
+        }
+        function loopConfetti() {
+            const c = document.getElementById('fxConfettiCanvas'); if(!c) return; const ctx = c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+            for(let i=confettiList.length-1; i>=0; i--) {
+                const p = confettiList[i]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.22; p.life-=0.025;
+                ctx.save(); ctx.globalAlpha = Math.max(0, p.life); ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill(); ctx.restore();
+                if(p.life<=0) confettiList.splice(i,1);
+            }
+            requestAnimationFrame(loopConfetti);
+        }
+        loopConfetti();
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadFromLocalVault(); 
+            initMeshCanvas(); 
+            refreshPomoDisplay();
+            renderSubjectsScreen(); 
+            renderScheduleScreen(); 
+            renderBossRaids(); 
+            renderGpaTable(); 
+            renderHeatmap(); 
+            populateSelects(); 
+            refreshRadar();
+
+            // Realtime Live Clock
+            setInterval(() => { 
+                const now = new Date(); 
+                const yyyy = now.getFullYear();
+                const mm = String(now.getMonth() + 1).padStart(2, '0');
+                const dd = String(now.getDate()).padStart(2, '0');
+                const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                const cl = document.getElementById('topLiveClock'); 
+                if(cl) cl.innerText = `${yyyy}/${mm}/${dd} | ${timeStr}`; 
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
